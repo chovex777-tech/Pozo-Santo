@@ -1,6 +1,14 @@
 [build]
   publish = "."
 
+# Esto permite que los archivos estáticos (como config.yml) se sirvan normalmente
+[[redirects]]
+  from = "/admin/config.yml"
+  to = "/admin/config.yml"
+  status = 200
+  force = false
+
+# Esto es para todo lo demás (tu página normal)
 [[redirects]]
   from = "/*"
   to = "/index.html"
