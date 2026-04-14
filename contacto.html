@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | Pozo Santo</title>
+    <link rel="icon" type="image/x-icon" href="images/icono.ico">
+    <meta name="description" content="Contacta con el equipo de Tequila Pozo Santo. Información de CEO, administración, producción y embarques.">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/estilo.css">
+    <style>
+        /* Estilos específicos para la página de contacto */
+        .contact-page {
+            padding: 150px 5% 80px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .contact-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .contact-header h1 {
+            font-size: 64px;
+            color: var(--oro);
+            margin-bottom: 15px;
+        }
+
+        .contact-header h1 span {
+            color: var(--blanco);
+            font-size: 24px;
+            display: block;
+            letter-spacing: 4px;
+            margin-top: 5px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin-bottom: 60px;
+        }
+
+        .contact-info {
+            background: linear-gradient(135deg, var(--negro-profundo) 0%, var(--negro) 100%);
+            border: 1px solid rgba(255,215,0,0.2);
+            border-radius: 20px;
+            padding: 40px;
+        }
+
+        .contact-info h2 {
+            font-size: 36px;
+            color: var(--oro);
+            margin-bottom: 30px;
+            border-bottom: 1px solid rgba(255,215,0,0.3);
+            padding-bottom: 15px;
+        }
+
+        .contact-person {
+            margin-bottom: 35px;
+            padding-left: 15px;
+            border-left: 3px solid var(--oro);
+        }
+
+        .contact-person h3 {
+            font-size: 22px;
+            color: var(--blanco);
+            margin-bottom: 5px;
+        }
+
+        .contact-person .role {
+            color: var(--oro);
+            font-size: 14px;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .contact-person .email {
+            color: #CCC;
+            font-size: 16px;
+            margin-bottom: 5px;
+            word-break: break-all;
+        }
+
+        .contact-person .email i {
+            color: var(--oro);
+            margin-right: 10px;
+            width: 20px;
+        }
+
+        .contact-person .phone {
+            color: #CCC;
+            font-size: 16px;
+        }
+
+        .contact-person .phone i {
+            color: var(--oro);
+            margin-right: 10px;
+            width: 20px;
+        }
+
+        .company-links {
+            background: linear-gradient(135deg, var(--negro-profundo) 0%, var(--negro) 100%);
+            border: 1px solid rgba(255,215,0,0.2);
+            border-radius: 20px;
+            padding: 40px;
+        }
+
+        .company-links h2 {
+            font-size: 36px;
+            color: var(--oro);
+            margin-bottom: 30px;
+            border-bottom: 1px solid rgba(255,215,0,0.3);
+            padding-bottom: 15px;
+        }
+
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .link-item a {
+            display: block;
+            padding: 15px 20px;
+            background: rgba(255,215,0,0.05);
+            border: 1px solid rgba(255,215,0,0.2);
+            border-radius: 10px;
+            color: var(--blanco);
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 16px;
+        }
+
+        .link-item a:hover {
+            background: var(--oro);
+            color: var(--negro);
+            transform: translateY(-3px);
+        }
+
+        .link-item i {
+            margin-right: 10px;
+            color: var(--oro);
+            transition: all 0.3s;
+        }
+
+        .link-item a:hover i {
+            color: var(--negro);
+        }
+
+        .newsletter-section {
+            background: linear-gradient(135deg, var(--negro-profundo) 0%, var(--negro) 100%);
+            border: 1px solid rgba(255,215,0,0.2);
+            border-radius: 30px;
+            padding: 60px;
+            text-align: center;
+            margin: 60px 0;
+        }
+
+        .newsletter-section h2 {
+            font-size: 48px;
+            color: var(--blanco);
+            margin-bottom: 15px;
+        }
+
+        .newsletter-section p {
+            color: #CCC;
+            max-width: 600px;
+            margin: 0 auto 40px;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+            gap: 10px;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 15px 20px;
+            background: transparent;
+            border: 1px solid rgba(255,215,0,0.3);
+            border-radius: 50px;
+            color: var(--blanco);
+            font-size: 16px;
+        }
+
+        .newsletter-form input:focus {
+            outline: none;
+            border-color: var(--oro);
+        }
+
+        .newsletter-form button {
+            padding: 15px 40px;
+            background: var(--oro);
+            border: none;
+            border-radius: 50px;
+            color: var(--negro);
+            font-weight: 600;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 16px;
+        }
+
+        .newsletter-form button:hover {
+            background: transparent;
+            border: 1px solid var(--oro);
+            color: var(--blanco);
+        }
+
+        @media (max-width: 1024px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            .links-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .contact-header h1 {
+                font-size: 48px;
+            }
+            .newsletter-form {
+                flex-direction: column;
+            }
+            .contact-person {
+                padding-left: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <nav>
+            <a href="index.html" class="logo">
+                <img src="images/LOGO_POZO_SANTO.png" alt="Pozo Santo" style="height: 100px; width: auto;">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">INICIO</a></li>
+                <li><a href="historia.html">HISTORIA</a></li>
+                <li><a href="proceso.html">PROCESO</a></li>
+                <li><a href="tienda.html">TIENDA</a></li>
+                <li><a href="contacto.html" class="active">CONTACTO</a></li>
+            </ul>
+            <div class="nav-icons">
+                <i class="fas fa-search"></i>
+                <i class="fas fa-user"></i>
+                <div style="position: relative;">
+                    <i class="fas fa-shopping-cart" id="cartIcon"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </div>
+                <div class="language-selector">
+                    <span class="active" onclick="changeLanguage('es')">ES</span>
+                    <span onclick="changeLanguage('en')">EN</span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="contact-page">
+        <div class="contact-header">
+            <h1>CONTACTO <span>DIRECTO</span></h1>
+        </div>
+
+        <div class="contact-grid">
+            <!-- Contacto Directo -->
+            <div class="contact-info">
+                <h2>CEO</h2>
+                <div class="contact-person">
+                    <h3>Diego Lopez</h3>
+                    <div class="role">Director General</div>
+                    <div class="email"><i class="fas fa-envelope"></i> diego.lopez@tequillaspozasanto.com.mx</div>
+                    <div class="phone"><i class="fas fa-phone"></i> 331 103 0831</div>
+                </div>
+
+                <h2 style="margin-top: 40px;">ADMINISTRACIÓN</h2>
+                <div class="contact-person">
+                    <h3>Elda Lopez</h3>
+                    <div class="role">Administradora</div>
+                    <div class="email"><i class="fas fa-envelope"></i> elda.lopez@tequillaspozasanto.com.mx</div>
+                </div>
+
+                <h2 style="margin-top: 40px;">PRODUCCIÓN</h2>
+                <div class="contact-person">
+                    <h3>Rigoberto Jimenez</h3>
+                    <div class="role">Jefe de Producción</div>
+                    <div class="email"><i class="fas fa-envelope"></i> rigoberto.jimenez@tequillaspozasanto.com.mx</div>
+                </div>
+
+                <h2 style="margin-top: 40px;">EMBARQUES</h2>
+                <div class="contact-person">
+                    <h3>Tania Padilla</h3>
+                    <div class="role">Coordinadora de Embarques</div>
+                    <div class="email"><i class="fas fa-envelope"></i> tania.padilla@tequillaspozasanto.com.mx</div>
+                </div>
+            </div>
+
+            <!-- Compañía y Enlaces -->
+            <div class="company-links">
+                <h2>COMPAÑÍA</h2>
+                <div class="links-grid">
+                    <div class="link-item">
+                        <a href="historia.html"><i class="fas fa-book-open"></i> Nuestra Historia</a>
+                    </div>
+                    <div class="link-item">
+                        <a href="proceso.html"><i class="fas fa-flask"></i> El Proceso</a>
+                    </div>
+                    <div class="link-item">
+                        <a href="#"><i class="fas fa-truck"></i> Distribuidores</a>
+                    </div>
+                    <div class="link-item">
+                        <a href="contacto.html"><i class="fas fa-envelope"></i> Contacto</a>
+                    </div>
+                </div>
+
+                <h2 style="margin-top: 40px;">CONTACTO</h2>
+                <div class="contact-person" style="margin-top: 20px;">
+                    <h3>Diego Lopez</h3>
+                    <div class="role">CEO</div>
+                    <div class="phone"><i class="fas fa-phone"></i> 331 103 0831</div>
+                </div>
+                <div class="contact-person">
+                    <h3>Elda Lopez</h3>
+                    <div class="role">Administración</div>
+                </div>
+                <div class="contact-person">
+                    <h3>Rigoberto Jimenez</h3>
+                    <div class="role">Producción</div>
+                </div>
+                <div class="contact-person">
+                    <h3>Tania Padilla</h3>
+                    <div class="role">Embarques</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Newsletter Section -->
+        <div class="newsletter-section">
+            <h2>BOLETÍN INFORMATIVO</h2>
+            <p>Suscríbete para recibir recetas, acceso exclusivo a eventos y mucho más.</p>
+            <form class="newsletter-form" id="newsletterForm">
+                <input type="email" placeholder="Tu correo electrónico" required>
+                <button type="submit">SUSCRIBIRSE</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-about">
+                <div class="footer-logo"><span>P</span>OZO SANTO</div>
+                <p class="lang-es">El espíritu de los dioses en cada gota. Tequila artesanal desde 1888.</p>
+                <p class="lang-en">The spirit of the gods in every drop. Artisanal tequila since 1888.</p>
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/tequilapozosanto/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/feritug/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://x.com/CrimsonDesert_" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.youtube.com/@TheKasaneru" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4 class="lang-es">EXPLORAR</h4>
+                <h4 class="lang-en">EXPLORE</h4>
+                <ul>
+                    <li><a href="index.html" class="lang-es">Inicio</a><a href="index.html" class="lang-en">Home</a></li>
+                    <li><a href="historia.html" class="lang-es">Historia</a><a href="historia.html" class="lang-en">Story</a></li>
+                    <li><a href="proceso.html" class="lang-es">Proceso</a><a href="proceso.html" class="lang-en">Process</a></li>
+                    <li><a href="tienda.html" class="lang-es">Tienda</a><a href="tienda.html" class="lang-en">Shop</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4 class="lang-es">LEGAL</h4>
+                <h4 class="lang-en">LEGAL</h4>
+                <ul>
+                    <li><a href="aviso-privacidad.html">Aviso de Privacidad</a></li>
+                    <li><a href="terminos.html">Términos y Condiciones</a></li>
+                    <li><a href="politica-envios.html">Política de Envíos</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4 class="lang-es">CONTACTO</h4>
+                <h4 class="lang-en">CONTACT</h4>
+                <ul>
+                    <li><a href="contacto.html">Formulario</a></li>
+                    <li><a href="faq.html">Preguntas Frecuentes</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Pozo Santo. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Language switcher
+        function changeLanguage(lang) {
+            document.body.classList.remove('en', 'es');
+            document.body.classList.add(lang);
+            
+            document.querySelectorAll('.language-selector span').forEach(el => {
+                el.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        const savedLang = localStorage.getItem('preferredLanguage') || 'es';
+        document.body.classList.add(savedLang);
+        document.querySelectorAll('.language-selector span').forEach(el => {
+            if (el.textContent.toLowerCase() === savedLang) {
+                el.classList.add('active');
+            }
+        });
+
+        // Newsletter form
+        document.getElementById('newsletterForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('input').value;
+            alert(`¡Gracias por suscribirte! Te enviaremos noticias a ${email}`);
+            this.reset();
+        });
+
+        // Cart functionality
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        document.getElementById('cartCount').textContent = cart.length;
+    </script>
+    <script src="js/busqueda.js"></script>
+    <script src="js/carrito.js"></script>
+    <script src="js/sonidos.js"></script>
+</body>
+</html>

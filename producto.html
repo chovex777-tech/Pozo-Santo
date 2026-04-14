@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Producto | Pozo Santo</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <meta name="description" content="Tequila Pozo Santo: El espíritu de los dioses en cada gota.">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./css/estilo.css">
+</head>
+<body>
+    <header id="header">
+        <nav>
+            <a href="index.html" class="logo">
+                <img src="images/LOGO_POZO_SANTO.png" alt="Pozo Santo" style="height: 100px; width: auto;">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">INICIO</a></li>
+                <li><a href="historia.html">HISTORIA</a></li>
+                <li><a href="proceso.html">PROCESO</a></li>
+                <li><a href="tienda.html">TIENDA</a></li>
+                <li><a href="contacto.html">CONTACTO</a></li>
+            </ul>
+            <div class="nav-icons">
+                <i class="fas fa-search"></i>
+                <i class="fas fa-user"></i>
+                <div style="position: relative;">
+                    <i class="fas fa-shopping-cart" id="cartIcon"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </div>
+                <div class="language-selector">
+                    <span class="active" onclick="changeLanguage('es')">ES</span>
+                    <span onclick="changeLanguage('en')">EN</span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="product-page">
+        <div class="product-container">
+            <!-- Gallery -->
+            <div class="product-gallery">
+                <span class="product-badge" id="productBadge"></span>
+                <div class="main-image" id="mainImage">
+                    <img src="" alt="" id="mainImg">
+                </div>
+                <div class="thumbnail-grid" id="thumbnailGrid">
+                    <!-- Thumbnails will be inserted here -->
+                </div>
+            </div>
+
+            <!-- Product Info -->
+            <div class="product-info">
+                <h1 id="productName"></h1>
+                <div class="product-subtitle" id="productSubtitle"></div>
+                
+                <div class="product-price-large" id="productPrice"></div>
+
+                <div class="product-meta" id="productMeta"></div>
+
+                <div class="product-description" id="productDescription"></div>
+
+                <!-- Tasting Notes -->
+                <div class="tasting-notes" id="tastingNotes"></div>
+
+                <!-- Actions -->
+                <div class="product-actions">
+                    <a href="#" class="btn-pdf" id="downloadPDF">
+                        <i class="fas fa-file-pdf"></i>
+                        <span class="lang-es">FICHA TÉCNICA</span>
+                        <span class="lang-en">TECHNICAL SHEET</span>
+                    </a>
+                    <div class="quantity-selector">
+                        <button class="quantity-btn" onclick="decrementQuantity()">-</button>
+                        <input type="text" class="quantity-input" id="quantity" value="1" readonly>
+                        <button class="quantity-btn" onclick="incrementQuantity()">+</button>
+                    </div>
+                </div>
+                
+                <button class="btn-add-cart" id="addToCartBtn">
+                    <span class="lang-es">AGREGAR AL CARRITO</span>
+                    <span class="lang-en">ADD TO CART</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Awards Section -->
+        <div class="awards-section">
+            <h2 class="lang-es">PREMIOS Y RECONOCIMIENTOS</h2>
+            <h2 class="lang-en">AWARDS & RECOGNITIONS</h2>
+            <div class="awards-grid">
+                <div class="award-card">
+                    <i class="fas fa-trophy"></i>
+                    <h4>DOBLE ORO</h4>
+                    <p>San Francisco 2023</p>
+                </div>
+                <div class="award-card">
+                    <i class="fas fa-medal"></i>
+                    <h4>MEJOR BLANCO</h4>
+                    <p>Mexico Competition 2023</p>
+                </div>
+                <div class="award-card">
+                    <i class="fas fa-star"></i>
+                    <h4>95 PUNTOS</h4>
+                    <p>Wine Enthusiast</p>
+                </div>
+                <div class="award-card">
+                    <i class="fas fa-crown"></i>
+                    <h4>GRAN ORO</h4>
+                    <p>Bruselas 2022</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Related Products -->
+        <div class="related-section">
+            <h2 class="lang-es">TAMBIÉN TE PUEDE GUSTAR</h2>
+            <h2 class="lang-en">YOU MAY ALSO LIKE</h2>
+            <div class="related-grid" id="relatedGrid">
+                <!-- Related products will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-about">
+                <div class="footer-logo"><span>P</span>OZO SANTO</div>
+                <p class="lang-es">El espíritu de los dioses en cada gota. Tequila artesanal desde 1888.</p>
+                <p class="lang-en">The spirit of the gods in every drop. Artisanal tequila since 1888.</p>
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/tequilapozosanto/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/feritug/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://x.com/CrimsonDesert_" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.youtube.com/@TheKasaneru" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4 class="lang-es">EXPLORAR</h4>
+                <h4 class="lang-en">EXPLORE</h4>
+                <ul>
+                    <li><a href="index.html" class="lang-es">Inicio</a><a href="index.html" class="lang-en">Home</a></li>
+                    <li><a href="historia.html" class="lang-es">Historia</a><a href="historia.html" class="lang-en">Story</a></li>
+                    <li><a href="proceso.html" class="lang-es">Proceso</a><a href="proceso.html" class="lang-en">Process</a></li>
+                    <li><a href="tienda.html" class="lang-es">Tienda</a><a href="tienda.html" class="lang-en">Shop</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4 class="lang-es">LEGAL</h4>
+                <h4 class="lang-en">LEGAL</h4>
+                <ul>
+                    <li><a href="aviso-privacidad.html">Aviso de Privacidad</a></li>
+                    <li><a href="terminos.html">Términos y Condiciones</a></li>
+                    <li><a href="politica-envios.html">Política de Envíos</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4 class="lang-es">CONTACTO</h4>
+                <h4 class="lang-en">CONTACT</h4>
+                <ul>
+                    <li><a href="contacto.html">Formulario</a></li>
+                    <li><a href="faq.html">Preguntas Frecuentes</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Pozo Santo. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // ===== PRODUCT DATA (ACTUALIZADO CON LOS 21 PRODUCTOS) =====
+        const products = [
+            // CHACOTEO (4)
+            { id: 1, marca: 'CHACOTEO', name: { es: 'CHACOTEO BLANCO', en: 'CHACOTEO WHITE' }, category: 'blanco', tipo: 'Regular', ml: 750, alcohol: 38, price: 250, image: 'images/los-pozos-santos.jpg', images: ['images/los-pozos-santos.jpg','images/los-pozos-santos.jpg','images/los-pozos-santos.jpg','images/los-pozos-santos.jpg'], badge: { es: 'ECONÓMICO', en: 'ECONOMICAL' }, description: { es: 'Tequila Chacoteo Blanco. Suave y equilibrado.', en: 'Chacoteo White Tequila. Smooth and balanced.' }, tasting: { vista: { es: 'Transparente', en: 'Clear' }, olfato: { es: 'Agave fresco', en: 'Fresh agave' }, gusto: { es: 'Suave', en: 'Smooth' } } },
+            { id: 2, marca: 'CHACOTEO', name: { es: 'CHACOTEO REPOSADO', en: 'CHACOTEO REPOSADO' }, category: 'reposado', tipo: 'Regular', ml: 750, alcohol: 38, price: 300, image: 'images/pozo-santa-rosa.jpg', images: ['images/pozo-santa-rosa.jpg','images/pozo-santa-rosa.jpg','images/pozo-santa-rosa.jpg','images/pozo-santa-rosa.jpg'], badge: { es: 'BÁSICO', en: 'BASIC' }, description: { es: 'Chacoteo Reposado con notas de madera.', en: 'Chacoteo Reposado with wood notes.' }, tasting: { vista: { es: 'Dorado claro', en: 'Light gold' }, olfato: { es: 'Vainilla', en: 'Vanilla' }, gusto: { es: 'Suave', en: 'Smooth' } } },
+            { id: 3, marca: 'CHACOTEO', name: { es: 'CHACOTEO AÑEJO', en: 'CHACOTEO AGED' }, category: 'anejo', tipo: 'Regular', ml: 750, alcohol: 40, price: 350, image: 'images/pozo-santico.jpg', images: ['images/pozo-santico.jpg','images/pozo-santico.jpg','images/pozo-santico.jpg','images/pozo-santico.jpg'], badge: null, description: { es: 'Añejo con cuerpo y carácter.', en: 'Full-bodied aged tequila.' }, tasting: { vista: { es: 'Ámbar', en: 'Amber' }, olfato: { es: 'Madera', en: 'Wood' }, gusto: { es: 'Complejo', en: 'Complex' } } },
+            { id: 4, marca: 'CHACOTEO', name: { es: 'CHACOTEO EXTRA AÑEJO', en: 'CHACOTEO EXTRA AGED' }, category: 'extra-anejo', tipo: 'Regular', ml: 750, alcohol: 40, price: 400, image: 'images/pozo-santico.jpg', images: ['images/pozo-santico.jpg','images/pozo-santico.jpg','images/pozo-santico.jpg','images/pozo-santico.jpg'], badge: { es: 'PREMIUM', en: 'PREMIUM' }, description: { es: 'Extra añejo de edición especial.', en: 'Special edition extra aged.' }, tasting: { vista: { es: 'Oscuro', en: 'Dark' }, olfato: { es: 'Roble', en: 'Oak' }, gusto: { es: 'Profundo', en: 'Deep' } } },
+
+            // POZO SANTO REGULAR (5)
+            { id: 5, marca: 'POZO SANTO', name: { es: 'POZO SANTO BLANCO', en: 'POZO SANTO WHITE' }, category: 'blanco', tipo: 'Regular', ml: 750, alcohol: 38, price: 300, image: 'images/los-pozos-santos.jpg', images: ['images/los-pozos-santos.jpg','images/los-pozos-santos.jpg','images/los-pozos-santos.jpg','images/los-pozos-santos.jpg'], badge: { es: 'CLÁSICO', en: 'CLASSIC' }, description: { es: 'Tequila Pozo Santo Blanco. Destilado dos veces en alambiques de cobre. Notas frescas de agave cocido, cítricos y un toque de pimienta.', en: 'Pozo Santo White Tequila. Double distilled in copper stills. Fresh notes of cooked agave, citrus, and a hint of pepper.' }, tasting: { vista: { es: 'Transparente, brillante', en: 'Clear, bright' }, olfato: { es: 'Agave fresco, cítricos', en: 'Fresh agave, citrus' }, gusto: { es: 'Suave, ligeramente dulce', en: 'Smooth, slightly sweet' } } },
+            { id: 6, marca: 'POZO SANTO', name: { es: 'POZO SANTO REPOSADO', en: 'POZO SANTO REPOSADO' }, category: 'reposado', tipo: 'Regular', ml: 750, alcohol: 38, price: 350, image: 'images/pozo-santa-rosa.jpg', images: ['images/pozo-santa-rosa.jpg','images/pozo-santa-rosa.jpg','images/pozo-santa-rosa.jpg','images/pozo-santa-rosa.jpg'], badge: null, description: { es: 'Reposado por 8 meses en barricas de roble blanco. Notas de vainilla, caramelo y roble.', en: 'Rested for 8 months in white oak barrels. Notes of vanilla, caramel, and oak.' }, tasting: { vista: { es: 'Amarillo pajizo', en: 'Straw yellow' }, olfato: { es: 'Vainilla, caramelo, roble', en: 'Vanilla, caramel, oak' }, gusto: { es: 'Suave, madera, especias', en: 'Smooth, wood, spices' } } },
+            { id: 7, marca: 'POZO SANTO', name: { es: 'POZO SANTO AÑEJO', en: 'POZO SANTO AGED' }, category: 'anejo', tipo: 'Regular', ml: 750, alcohol: 40, price: 400, image: 'images/pozo-santico.jpg', images: ['images/pozo-santico.jpg','images/pozo-santico.jpg','images/pozo-santico.jpg','images/pozo-santico.jpg'], badge: { es: 'RESERVA', en: 'RESERVE' }, description: { es: 'Añejado por 24 meses en barricas de roble. Notas complejas de chocolate, tabaco y frutos secos.', en: 'Aged for 24 months in oak barrels. Complex notes of chocolate, tobacco, and nuts.' }, tasting: { vista: { es: 'Ámbar oscuro', en: 'Dark amber' }, olfato: { es: 'Chocolate, tabaco, madera', en: 'Chocolate, tobacco, wood' }, gusto: { es: 'Complejo, sedoso, especiado', en: 'Complex, silky, spicy' } } },
+            { id: 8, marca: 'POZO SANTO', name: { es: 'POZO SANTO ROSA', en: 'POZO SANTO ROSÉ' }, category: 'rosa', tipo: 'Regular', ml: 750, alcohol: 38, price: 400, image: 'images/pozo-santo-rosa.jpg', images: ['images/pozo-santo-rosa.jpg','images/pozo-santo-rosa.jpg','images/pozo-santo-rosa.jpg','images/pozo-santo-rosa.jpg'], badge: { es: 'ESPECIAL', en: 'SPECIAL' }, description: { es: 'Edición Rosé con notas frutales.', en: 'Rosé edition with fruity notes.' }, tasting: { vista: { es: 'Rosado', en: 'Rosé' }, olfato: { es: 'Frutos rojos', en: 'Berries' }, gusto: { es: 'Fresco', en: 'Fresh' } } },
+            { id: 9, marca: 'POZO SANTO', name: { es: 'POZO SANTO ROSA EDICIÓN PREMIUM', en: 'POZO SANTO ROSÉ PREMIUM EDITION' }, category: 'rosa', tipo: 'Premium', ml: 750, alcohol: 40, price: 750, image: 'images/pozo-santo-rosa.jpg', images: ['images/pozo-santa-rosa.jpg','images/pozo-santo-rosa.jpg','images/pozo-santo-rosa.jpg','images/pozo-santo-rosa.jpg'], badge: { es: 'PREMIUM', en: 'PREMIUM' }, description: { es: 'Edición premium del Rosé.', en: 'Premium Rosé edition.' }, tasting: { vista: { es: 'Rosado intenso', en: 'Intense rosé' }, olfato: { es: 'Frutal', en: 'Fruity' }, gusto: { es: 'Elegante', en: 'Elegant' } } },
+
+            // POZO SANTO ARTESANAL (4)
+            { id: 10, marca: 'POZO SANTO', name: { es: 'POZO SANTO BLANCO ARTESANAL', en: 'POZO SANTO ARTISANAL WHITE' }, category: 'blanco', tipo: 'Artesanal', ml: 750, alcohol: 38, price: 450, image: 'images/los-pozos-santos.jpg', images: ['images/los-pozos-santos.jpg','images/los-pozos-santos.jpg','images/los-pozos-santos.jpg','images/los-pozos-santos.jpg'], badge: { es: 'ARTESANAL', en: 'ARTISANAL' }, description: { es: 'Blanco artesanal de alta calidad.', en: 'High-quality artisanal white.' }, tasting: { vista: { es: 'Transparente', en: 'Clear' }, olfato: { es: 'Agave', en: 'Agave' }, gusto: { es: 'Suave', en: 'Smooth' } } },
+            { id: 11, marca: 'POZO SANTO', name: { es: 'POZO SANTO REPOSADO ARTESANAL', en: 'POZO SANTO ARTISANAL REPOSADO' }, category: 'reposado', tipo: 'Artesanal', ml: 750, alcohol: 38, price: 500, image: 'images/pozo-santa-rosa.jpg', images: ['images/pozo-santa-rosa.jpg','images/pozo-santa-rosa.jpg','images/pozo-santa-rosa.jpg','images/pozo-santa-rosa.jpg'], badge: { es: 'ARTESANAL', en: 'ARTISANAL' }, description: { es: 'Reposado artesanal.', en: 'Artisanal reposado.' }, tasting: { vista: { es: 'Dorado', en: 'Gold' }, olfato: { es: 'Madera', en: 'Wood' }, gusto: { es: 'Balanceado', en: 'Balanced' } } },
+            { id: 12, marca: 'POZO SANTO', name: { es: 'POZO SANTO AÑEJO ARTESANAL', en: 'POZO SANTO ARTISANAL AGED' }, category: 'anejo', tipo: 'Artesanal', ml: 750, alcohol: 40, price: 550, image: 'images/pozo-santico.jpg', images: ['images/pozo-santico.jpg','images/pozo-santico.jpg','images/pozo-santico.jpg','images/pozo-santico.jpg'], badge: { es: 'ARTESANAL', en: 'ARTISANAL' }, description: { es: 'Añejo artesanal.', en: 'Artisanal aged.' }, tasting: { vista: { es: 'Ámbar', en: 'Amber' }, olfato: { es: 'Especias', en: 'Spices' }, gusto: { es: 'Complejo', en: 'Complex' } } },
+            { id: 13, marca: 'POZO SANTO', name: { es: 'POZO SANTO EXTRA AÑEJO ARTESANAL', en: 'POZO SANTO EXTRA AGED ARTISANAL' }, category: 'extra-anejo', tipo: 'Artesanal', ml: 750, alcohol: 40, price: 600, image: 'images/pozo-santico.jpg', images: ['images/pozo-santico.jpg','images/pozo-santico.jpg','images/pozo-santico.jpg','images/pozo-santico.jpg'], badge: { es: 'ARTESANAL', en: 'ARTISANAL' }, description: { es: 'Extra añejo artesanal.', en: 'Artisanal extra aged.' }, tasting: { vista: { es: 'Oscuro', en: 'Dark' }, olfato: { es: 'Profundo', en: 'Deep' }, gusto: { es: 'Intenso', en: 'Intense' } } },
+
+            // POZO SANTO CERÁMICA ARTESANAL (4)
+            { id: 14, marca: 'POZO SANTO', name: { es: 'POZO SANTO BLANCO CERÁMICA', en: 'POZO SANTO WHITE CERAMIC' }, category: 'blanco', tipo: 'Cerámica', ml: 750, alcohol: 38, price: 950, image: 'images/los-pozos-santos.jpg', images: ['images/los-pozos-santos.jpg','images/los-pozos-santos.jpg','images/los-pozos-santos.jpg','images/los-pozos-santos.jpg'], badge: { es: 'CERÁMICA', en: 'CERAMIC' }, description: { es: 'Edición cerámica artesanal.', en: 'Artisanal ceramic edition.' }, tasting: { vista: { es: 'Brillante', en: 'Bright' }, olfato: { es: 'Agave', en: 'Agave' }, gusto: { es: 'Suave', en: 'Smooth' } } },
+            { id: 15, marca: 'POZO SANTO', name: { es: 'POZO SANTO REPOSADO CERÁMICA', en: 'POZO SANTO REPOSADO CERAMIC' }, category: 'reposado', tipo: 'Cerámica', ml: 750, alcohol: 38, price: 1200, image: 'images/pozo-santa-rosa.jpg', images: ['images/pozo-santa-rosa.jpg','images/pozo-santa-rosa.jpg','images/pozo-santa-rosa.jpg','images/pozo-santa-rosa.jpg'], badge: { es: 'CERÁMICA', en: 'CERAMIC' }, description: { es: 'Reposado en cerámica.', en: 'Reposado in ceramic.' }, tasting: { vista: { es: 'Dorado', en: 'Gold' }, olfato: { es: 'Vainilla', en: 'Vanilla' }, gusto: { es: 'Elegante', en: 'Elegant' } } },
+            { id: 16, marca: 'POZO SANTO', name: { es: 'POZO SANTO AÑEJO CERÁMICA', en: 'POZO SANTO AGED CERAMIC' }, category: 'anejo', tipo: 'Cerámica', ml: 750, alcohol: 40, price: 1800, image: 'images/pozo-santico.jpg', images: ['images/pozo-santico.jpg','images/pozo-santico.jpg','images/pozo-santico.jpg','images/pozo-santico.jpg'], badge: { es: 'CERÁMICA', en: 'CERAMIC' }, description: { es: 'Añejo en cerámica.', en: 'Aged in ceramic.' }, tasting: { vista: { es: 'Ámbar', en: 'Amber' }, olfato: { es: 'Roble', en: 'Oak' }, gusto: { es: 'Complejo', en: 'Complex' } } },
+            { id: 17, marca: 'POZO SANTO', name: { es: 'POZO SANTO EXTRA AÑEJO CERÁMICA', en: 'POZO SANTO EXTRA AGED CERAMIC' }, category: 'extra-anejo', tipo: 'Cerámica', ml: 750, alcohol: 40, price: 2100, image: 'images/pozo-santico.jpg', images: ['images/pozo-santico.jpg','images/pozo-santico.jpg','images/pozo-santico.jpg','images/pozo-santico.jpg'], badge: { es: 'CERÁMICA', en: 'CERAMIC' }, description: { es: 'Extra añejo en cerámica.', en: 'Extra aged in ceramic.' }, tasting: { vista: { es: 'Oscuro', en: 'Dark' }, olfato: { es: 'Profundo', en: 'Deep' }, gusto: { es: 'Intenso', en: 'Intense' } } },
+
+          // GRAN BRIX (3)
+{ id: 18, marca: 'GRAN BRIX', name: { es: 'GRAN BRIX CRISTALINO', en: 'GRAN BRIX CRYSTAL' }, category: 'cristalino', tipo: 'Regular', ml: 750, alcohol: 38, price: 550, image: 'images/tequila-prix-plata.jpg', images: ['images/tequila-prix-plata.jpg','images/tequila-prix-plata.jpg','images/tequila-prix-plata.jpg','images/tequila-prix-plata.jpg'], badge: { es: 'CRISTALINO', en: 'CRYSTAL' }, description: { es: 'Cristalino suave, prensado en frío.', en: 'Smooth crystal, cold pressed.' }, tasting: { vista: { es: 'Transparente', en: 'Clear' }, olfato: { es: 'Ligero', en: 'Light' }, gusto: { es: 'Suave', en: 'Smooth' } } },
+{ id: 19, marca: 'GRAN BRIX', name: { es: 'GRAN BRIX SABOR WHISKY', en: 'GRAN BRIX WHISKY FLAVOR' }, category: 'sabor', tipo: 'Regular', ml: 750, alcohol: 38, price: 600, image: 'images/tequila-prix-premium.jpg', images: ['images/tequila-prix-premium.jpg','images/tequila-prix-premium.jpg','images/tequila-prix-premium.jpg','images/tequila-prix-premium.jpg'], badge: { es: 'SABOR', en: 'FLAVOR' }, description: { es: 'Sabor a whisky con notas añejas.', en: 'Whisky flavor with aged notes.' }, tasting: { vista: { es: 'Dorado', en: 'Gold' }, olfato: { es: 'Whisky', en: 'Whisky' }, gusto: { es: 'Particular', en: 'Particular' } } },
+{ id: 20, marca: 'GRAN BRIX', name: { es: 'GRAN BRIX BLANCO 46°', en: 'GRAN BRIX WHITE 46°' }, category: 'blanco', tipo: 'Regular', ml: 750, alcohol: 46, price: 650, image: 'images/los-pozos-santos.jpg', images: ['images/los-pozos-santos.jpg','images/los-pozos-santos.jpg','images/los-pozos-santos.jpg','images/los-pozos-santos.jpg'], badge: { es: 'ALTA GRADUACIÓN', en: 'HIGH PROOF' }, description: { es: 'Alta graduación, sabor intenso.', en: 'High proof, intense flavor.' }, tasting: { vista: { es: 'Transparente', en: 'Clear' }, olfato: { es: 'Fuerte', en: 'Strong' }, gusto: { es: 'Intenso', en: 'Intense' } } },
+
+            // MANDO SUPREMO (1)
+            { id: 21, marca: 'MANDO SUPREMO', name: { es: 'MANDO SUPREMO AÑEJO EDICIÓN PREMIUM', en: 'MANDO SUPREMO AGED PREMIUM EDITION' }, category: 'anejo', tipo: 'Premium', ml: 750, alcohol: 40, price: 750, image: 'images/pozo-santico.jpg', images: ['images/pozo-santico.jpg','images/pozo-santico.jpg','images/pozo-santico.jpg','images/pozo-santico.jpg'], badge: { es: 'PREMIUM', en: 'PREMIUM' }, description: { es: 'Edición premium.', en: 'Premium edition.' }, tasting: { vista: { es: 'Oscuro', en: 'Dark' }, olfato: { es: 'Elegante', en: 'Elegant' }, gusto: { es: 'Exclusivo', en: 'Exclusive' } } }
+        ];
+
+        // ===== OBTENER PRODUCTO ACTUAL =====
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = parseInt(urlParams.get('id')) || 1;
+        const product = products.find(p => p.id === productId) || products[0];
+        let quantity = 1;
+
+        // ===== CARGAR PRODUCTO =====
+        function loadProduct() {
+            const lang = document.body.classList.contains('en') ? 'en' : 'es';
+            
+            document.getElementById('productName').textContent = product.name[lang];
+            document.getElementById('productSubtitle').innerHTML = `${product.marca} · ${product.tipo}`;
+            document.getElementById('productBadge').textContent = product.badge ? product.badge[lang] : '';
+            document.getElementById('productPrice').innerHTML = `$${product.price.toLocaleString()} <small>MXN</small>`;
+            document.getElementById('mainImg').src = product.image;
+            document.getElementById('mainImg').alt = product.name[lang];
+
+            // Meta
+            document.getElementById('productMeta').innerHTML = `
+                <div class="meta-item">
+                    <div class="meta-value">${product.ml} ml</div>
+                    <div class="meta-label">${lang === 'es' ? 'VOLUMEN' : 'VOLUME'}</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-value">${product.alcohol}%</div>
+                    <div class="meta-label">ALC. VOL.</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-value">100%</div>
+                    <div class="meta-label">${lang === 'es' ? 'AGAVE' : 'AGAVE'}</div>
+                </div>
+            `;
+
+            // Description
+            document.getElementById('productDescription').innerHTML = `
+                <h3 class="lang-es">DESCRIPCIÓN</h3>
+                <h3 class="lang-en">DESCRIPTION</h3>
+                <p>${product.description[lang]}</p>
+            `;
+
+            // Tasting notes
+            if (product.tasting) {
+                document.getElementById('tastingNotes').innerHTML = `
+                    <div class="note-card">
+                        <div class="note-icon"><i class="fas fa-eye"></i></div>
+                        <h4 class="lang-es">VISTA</h4>
+                        <h4 class="lang-en">SIGHT</h4>
+                        <p>${product.tasting.vista[lang]}</p>
+                    </div>
+                    <div class="note-card">
+                        <div class="note-icon"><i class="fas fa-nose"></i></div>
+                        <h4 class="lang-es">OLFATO</h4>
+                        <h4 class="lang-en">NOSE</h4>
+                        <p>${product.tasting.olfato[lang]}</p>
+                    </div>
+                    <div class="note-card">
+                        <div class="note-icon"><i class="fas fa-mouth"></i></div>
+                        <h4 class="lang-es">GUSTO</h4>
+                        <h4 class="lang-en">PALATE</h4>
+                        <p>${product.tasting.gusto[lang]}</p>
+                    </div>
+                `;
+            }
+
+            // Thumbnails
+            if (product.images) {
+                let thumbHtml = '';
+                product.images.forEach((img, index) => {
+                    thumbHtml += `
+                        <div class="thumbnail ${index === 0 ? 'active' : ''}" onclick="changeImage('${img}', this)">
+                            <img src="${img}" alt="Thumbnail ${index + 1}">
+                        </div>
+                    `;
+                });
+                document.getElementById('thumbnailGrid').innerHTML = thumbHtml;
+            }
+        }
+
+        function changeImage(src, element) {
+            document.getElementById('mainImg').src = src;
+            document.querySelectorAll('.thumbnail').forEach(thumb => {
+                thumb.classList.remove('active');
+            });
+            element.classList.add('active');
+        }
+
+        function incrementQuantity() {
+            quantity++;
+            document.getElementById('quantity').value = quantity;
+        }
+
+        function decrementQuantity() {
+            if (quantity > 1) {
+                quantity--;
+                document.getElementById('quantity').value = quantity;
+            }
+        }
+
+        function addToCart() {
+            const lang = document.body.classList.contains('en') ? 'en' : 'es';
+            
+            if (window.agregarAlCarrito) {
+                for(let i = 0; i < quantity; i++) {
+                    window.agregarAlCarrito({
+                        id: product.id,
+                        nombre: product.name[lang],
+                        precio: product.price,
+                        imagen: product.image
+                    });
+                }
+                
+                const btn = document.getElementById('addToCartBtn');
+                btn.innerHTML = '<span class="lang-es">✓ AGREGADO</span><span class="lang-en">✓ ADDED</span>';
+                btn.style.background = 'var(--oro)';
+                btn.style.color = 'var(--negro)';
+                
+                setTimeout(() => {
+                    btn.innerHTML = '<span class="lang-es">AGREGAR AL CARRITO</span><span class="lang-en">ADD TO CART</span>';
+                    btn.style.background = 'var(--oro)';
+                    btn.style.color = 'var(--negro)';
+                }, 1000);
+            }
+        }
+
+        function downloadTechnicalSheet() {
+            const lang = document.body.classList.contains('en') ? 'en' : 'es';
+            
+            // Mapeo de PDFs según el producto (con nombres CORRECTOS)
+            let fileName = '';
+            
+            // POZO SANTO CERÁMICA ARTESANAL (con TECNIA)
+            if (product.id === 5) fileName = 'FICHA TECNIA POZO SANTO BLANCO CERAMICA ARTESANAL.pdf';
+            else if (product.id === 6) fileName = 'FICHA TECNIA POZO SANTO REPOSADO CERAMICA ARTESANAL.pdf';
+            else if (product.id === 7) fileName = 'FICHA TECNIA POZO SANTO AÑEJO CERAMICA ARTESANAL.pdf';
+            
+            // CHACOTEO
+            else if (product.id === 1) fileName = 'FICHA TECNICA CHACOTEO BLANCO.pdf';
+            else if (product.id === 2) fileName = 'FICHA TECNICA CHACOTEO REPOSADO.pdf';
+            else if (product.id === 3) fileName = 'FICHA TECNICA CHACOTEO AÑEJO.pdf';
+            else if (product.id === 4) fileName = 'FICHA TECNICA CHACOTEO EXTRA AÑEJO.pdf';
+            
+            // Si no hay ficha específica
+            else {
+                alert('Ficha técnica no disponible para este producto');
+                return;
+            }
+            
+            // Crear enlace de descarga REAL
+            const link = document.createElement('a');
+            link.href = 'pdf/' + encodeURIComponent(fileName);
+            link.download = fileName;
+            link.click();
+            
+            // Feedback visual
+            const btn = document.getElementById('downloadPDF');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-file-pdf"></i> <span class="lang-es">DESCARGANDO...</span><span class="lang-en">DOWNLOADING...</span>';
+            setTimeout(() => {
+                btn.innerHTML = originalText;
+            }, 2000);
+        }
+
+        function loadRelatedProducts() {
+            const lang = document.body.classList.contains('en') ? 'en' : 'es';
+            const related = products.filter(p => p.id !== product.id && p.marca === product.marca).slice(0, 3);
+            
+            let html = '';
+            related.forEach(p => {
+                html += `
+                    <a href="producto.html?id=${p.id}" class="related-card">
+                        <div class="related-image" style="background-image: url('${p.image}')"></div>
+                        <div class="related-info">
+                            <h4>${p.name[lang]}</h4>
+                            <p>$${p.price.toLocaleString()} MXN</p>
+                        </div>
+                    </a>
+                `;
+            });
+            
+            if (related.length === 0) {
+                html = '<p style="text-align: center; color: #999;">No hay productos relacionados</p>';
+            }
+            
+            document.getElementById('relatedGrid').innerHTML = html;
+        }
+
+        // ===== INICIALIZAR =====
+        document.addEventListener('DOMContentLoaded', function() {
+            loadProduct();
+            loadRelatedProducts();
+
+            window.addEventListener('scroll', function() {
+                document.getElementById('header').classList.toggle('scrolled', window.scrollY > 100);
+            });
+
+            document.getElementById('addToCartBtn').addEventListener('click', addToCart);
+            document.getElementById('downloadPDF').addEventListener('click', function(e) {
+                e.preventDefault();
+                downloadTechnicalSheet();
+            });
+        });
+
+        // ===== LANGUAGE SWITCHER =====
+        function changeLanguage(lang) {
+            document.body.classList.remove('en', 'es');
+            document.body.classList.add(lang);
+            
+            document.querySelectorAll('.language-selector span').forEach(el => {
+                el.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            localStorage.setItem('preferredLanguage', lang);
+            loadProduct();
+            loadRelatedProducts();
+        }
+
+        const savedLang = localStorage.getItem('preferredLanguage') || 'es';
+        document.body.classList.add(savedLang);
+        document.querySelectorAll('.language-selector span').forEach(el => {
+            if (el.textContent.toLowerCase() === savedLang) {
+                el.classList.add('active');
+            }
+        });
+
+        window.changeImage = changeImage;
+        window.incrementQuantity = incrementQuantity;
+        window.decrementQuantity = decrementQuantity;
+    </script>
+    <script src="js/busqueda.js"></script>
+    <script src="js/carrito.js"></script>
+    <script src="js/sonidos.js"></script>
+    <script>
+        // Verificar si el CSS cargó
+        fetch('css/estilo.css')
+            .then(r => {
+                if (r.ok) console.log('✅ CSS encontrado');
+                else console.error('❌ CSS no encontrado');
+            })
+            .catch(e => console.error('❌ Error:', e));
+    </script>
+</body>
+</html>

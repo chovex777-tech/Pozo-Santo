@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestro Proceso | Pozo Santo</title>
+    <link rel="icon" type="image/x-icon" href="images/pozo-santo.ico">
+    <meta name="description" content="Descubre el arte de la elaboración del tequila Pozo Santo: desde la jima del agave hasta la destilación en alambiques de cobre.">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/estilo.css">
+    <style>
+        /* Estilos específicos para la página de proceso */
+        .proceso-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 100px;
+        }
+
+        .proceso-item {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .proceso-item:nth-child(even) {
+            direction: rtl;
+        }
+
+        .proceso-item:nth-child(even) .proceso-content {
+            direction: ltr;
+        }
+
+        .proceso-content h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: var(--oro);
+        }
+
+        .proceso-content h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: var(--blanco);
+        }
+
+        .proceso-content p {
+            color: #CCC;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .proceso-stats {
+            display: flex;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .proceso-stat {
+            text-align: center;
+        }
+
+        .proceso-stat .number {
+            font-size: 36px;
+            color: var(--oro);
+            font-weight: 600;
+        }
+
+        .proceso-stat .label {
+            font-size: 12px;
+            color: #999;
+            letter-spacing: 1px;
+        }
+
+        .proceso-image {
+            position: relative;
+            height: 500px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+        }
+
+        .proceso-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .proceso-badge {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(255,215,0,0.9);
+            color: var(--negro);
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .video-section {
+            background: linear-gradient(135deg, var(--negro-profundo) 0%, var(--negro) 100%);
+            border: 1px solid rgba(255,215,0,0.2);
+            border-radius: 30px;
+            padding: 80px;
+            text-align: center;
+            margin: 100px 0;
+        }
+
+        .video-section h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .video-section p {
+            color: #CCC;
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        .video-container {
+            width: 100%;
+            height: 500px;
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100px;
+            height: 100px;
+            background: var(--oro);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 2px solid var(--blanco);
+            z-index: 10;
+        }
+
+        .play-button:hover {
+            transform: translate(-50%, -50%) scale(1.1);
+            box-shadow: 0 0 40px rgba(255,215,0,0.5);
+        }
+
+        .play-button i {
+            font-size: 40px;
+            color: var(--negro);
+            margin-left: 5px;
+        }
+
+        @media (max-width: 1024px) {
+            .proceso-item {
+                grid-template-columns: 1fr;
+                direction: ltr !important;
+            }
+            .video-section { padding: 40px; }
+        }
+
+        @media (max-width: 768px) {
+            .video-container { height: 300px; }
+            .play-button { width: 60px; height: 60px; }
+            .play-button i { font-size: 24px; }
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <nav>
+            <a href="index.html" class="logo">
+                <img src="images/LOGO_POZO_SANTO.png" alt="Pozo Santo" style="height: 100px; width: auto;">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">INICIO</a></li>
+                <li><a href="historia.html">HISTORIA</a></li>
+                <li><a href="proceso.html" class="active">PROCESO</a></li>
+                <li><a href="tienda.html">TIENDA</a></li>
+                <li><a href="contacto.html">CONTACTO</a></li>
+            </ul>
+            <div class="nav-icons">
+                <i class="fas fa-search"></i>
+                <i class="fas fa-user"></i>
+                <div style="position: relative;">
+                    <i class="fas fa-shopping-cart" id="cartIcon"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </div>
+                <div class="language-selector">
+                    <span class="active" onclick="changeLanguage('es')">ES</span>
+                    <span onclick="changeLanguage('en')">EN</span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="page-header">
+        <div class="page-header-bg"></div>
+        <div class="page-header-overlay"></div>
+        <div class="page-header-content">
+            <div class="page-header-subtitle lang-es">DEL CAMPO A LA COPA</div>
+            <div class="page-header-subtitle lang-en">FROM FIELD TO GLASS</div>
+            <h1 class="page-header-title">
+                <span class="lang-es">NUESTRO</span>
+                <span class="lang-en">OUR</span> 
+                <span>PROCESO</span>
+            </h1>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="proceso-grid">
+            <!-- Jima -->
+            <div class="proceso-item">
+                <div class="proceso-content">
+                    <h2 class="lang-es">01.</h2>
+                    <h2 class="lang-en">01.</h2>
+                    <h3 class="lang-es">LA JIMA</h3>
+                    <h3 class="lang-en">THE HARVEST</h3>
+                    <p class="lang-es">Todo comienza en los campos de Jalisco, donde nuestros jimadores seleccionan cuidadosamente cada agave. Con una precisión heredada por generaciones, cortan las pencas para dejar solo el corazón, la piña, que después de 7-10 años ha alcanzado su punto óptimo de maduración.</p>
+                    <p class="lang-en">It all begins in the fields of Jalisco, where our jimadores carefully select each agave. With precision inherited through generations, they cut the leaves to leave only the heart, the piña, which after 7-10 years has reached its optimal ripeness.</p>
+                    <div class="proceso-stats">
+                        <div class="proceso-stat">
+                            <div class="number">7-10</div>
+                            <div class="label lang-es">AÑOS DE MADURACIÓN</div>
+                            <div class="label lang-en">YEARS OF RIPENING</div>
+                        </div>
+                        <div class="proceso-stat">
+                            <div class="number">40+</div>
+                            <div class="label lang-es">KILOS POR PIÑA</div>
+                            <div class="label lang-en">KILOS PER PIÑA</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="proceso-image">
+                    <img src="images/jima-agave.jpg" alt="Jima del agave">
+                    <div class="proceso-badge lang-es">JIMA TRADICIONAL</div>
+                    <div class="proceso-badge lang-en">TRADITIONAL HARVEST</div>
+                </div>
+            </div>
+
+            <!-- Cocción -->
+            <div class="proceso-item">
+                <div class="proceso-content">
+                    <h2 class="lang-es">02.</h2>
+                    <h2 class="lang-en">02.</h2>
+                    <h3 class="lang-es">COCCIÓN</h3>
+                    <h3 class="lang-en">COOKING</h3>
+                    <p class="lang-es">Las piñas se cocinan lentamente en hornos de mampostería durante 48 horas. Este proceso tradicional transforma los almidones en azúcares fermentables y le da al tequila sus notas características a agave cocido y caramelo.</p>
+                    <p class="lang-en">The piñas are slowly cooked in masonry ovens for 48 hours. This traditional process transforms starches into fermentable sugars and gives the tequila its characteristic notes of cooked agave and caramel.</p>
+                    <div class="proceso-stats">
+                        <div class="proceso-stat">
+                            <div class="number">48</div>
+                            <div class="label lang-es">HORAS DE COCCIÓN</div>
+                            <div class="label lang-en">HOURS OF COOKING</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="proceso-image">
+                    <img src="images/coccion-agave.jpg" alt="Cocción del agave">
+                    <div class="proceso-badge lang-es">HORNOS DE MAMPOSTERÍA</div>
+                    <div class="proceso-badge lang-en">MASONRY OVENS</div>
+                </div>
+            </div>
+
+            <!-- Molienda -->
+            <div class="proceso-item">
+                <div class="proceso-content">
+                    <h2 class="lang-es">03.</h2>
+                    <h2 class="lang-en">03.</h2>
+                    <h3 class="lang-es">MOLIENDA</h3>
+                    <h3 class="lang-en">MILLING</h3>
+                    <p class="lang-es">Una vez cocidas, las piñas se trituran en un molino de piedra volcánica para extraer los jugos dulces. Este método ancestral, conocido como "tahona", respeta la integridad de la fibra y produce un mosto de calidad superior.</p>
+                    <p class="lang-en">Once cooked, the piñas are crushed in a volcanic stone mill to extract the sweet juices. This ancestral method, known as "tahona," respects the integrity of the fiber and produces a must of superior quality.</p>
+                </div>
+                <div class="proceso-image">
+                    <img src="images/molienda-agave.jpg" alt="Molienda con tahona">
+                    <div class="proceso-badge lang-es">TAHONA DE PIEDRA</div>
+                    <div class="proceso-badge lang-en">STONE TAHONA</div>
+                </div>
+            </div>
+
+            <!-- Fermentación -->
+            <div class="proceso-item">
+                <div class="proceso-content">
+                    <h2 class="lang-es">04.</h2>
+                    <h2 class="lang-en">04.</h2>
+                    <h3 class="lang-es">FERMENTACIÓN</h3>
+                    <h3 class="lang-en">FERMENTATION</h3>
+                    <p class="lang-es">El mosto fermenta en tinas de madera de roble durante 7-10 días, utilizando levaduras silvestres que habitan naturalmente en nuestra destilería. Este proceso lento y natural desarrolla los aromas complejos que caracterizan a Pozo Santo.</p>
+                    <p class="lang-en">The must ferments in oak wood vats for 7-10 days, using wild yeasts that naturally inhabit our distillery. This slow, natural process develops the complex aromas that characterize Pozo Santo.</p>
+                    <div class="proceso-stats">
+                        <div class="proceso-stat">
+                            <div class="number">7-10</div>
+                            <div class="label lang-es">DÍAS DE FERMENTACIÓN</div>
+                            <div class="label lang-en">DAYS OF FERMENTATION</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="proceso-image">
+                    <img src="images/fermentacion-agave.jpg" alt="Fermentación">
+                    <div class="proceso-badge lang-es">LEVADURAS SILVESTRES</div>
+                    <div class="proceso-badge lang-en">WILD YEASTS</div>
+                </div>
+            </div>
+
+            <!-- Destilación -->
+            <div class="proceso-item">
+                <div class="proceso-content">
+                    <h2 class="lang-es">05.</h2>
+                    <h2 class="lang-en">05.</h2>
+                    <h3 class="lang-es">DESTILACIÓN</h3>
+                    <h3 class="lang-en">DISTILLATION</h3>
+                    <p class="lang-es">El líquido fermentado se destila dos veces en alambiques de cobre artesanales. La primera destilación produce el "ordinario", y la segunda, cuidadosamente controlada por nuestros maestros tequileros, da vida al espíritu puro de Pozo Santo.</p>
+                    <p class="lang-en">The fermented liquid is distilled twice in artisanal copper stills. The first distillation produces the "ordinario," and the second, carefully controlled by our master distillers, brings to life the pure spirit of Pozo Santo.</p>
+                </div>
+                <div class="proceso-image">
+                    <img src="images/destilacion.jpg" alt="Alambiques de cobre">
+                    <div class="proceso-badge lang-es">ALAMBIQUES DE COBRE</div>
+                    <div class="proceso-badge lang-en">COPPER STILLS</div>
+                </div>
+            </div>
+
+            <!-- Añejamiento -->
+            <div class="proceso-item">
+                <div class="proceso-content">
+                    <h2 class="lang-es">06.</h2>
+                    <h2 class="lang-en">06.</h2>
+                    <h3 class="lang-es">AÑEJAMIENTO</h3>
+                    <h3 class="lang-en">AGING</h3>
+                    <p class="lang-es">Según la variedad, nuestro tequila descansa en barricas de roble blanco: 2 meses para el Blanco, 6-12 meses para el Reposado, y hasta 3 años para el Añejo. Durante este tiempo, la madera aporta notas de vainilla, caramelo y especias que complementan la pureza del agave.</p>
+                    <p class="lang-en">Depending on the variety, our tequila rests in white oak barrels: 2 months for Blanco, 6-12 months for Reposado, and up to 3 years for Añejo. During this time, the wood contributes notes of vanilla, caramel, and spices that complement the purity of the agave.</p>
+                    <div class="proceso-stats">
+                        <div class="proceso-stat">
+                            <div class="number">2m-3a</div>
+                            <div class="label lang-es">TIEMPO DE AÑEJAMIENTO</div>
+                            <div class="label lang-en">AGING TIME</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="proceso-image">
+                    <img src="images/añejamiento.jpg" alt="Barricas de roble">
+                    <div class="proceso-badge lang-es">ROBLE BLANCO</div>
+                    <div class="proceso-badge lang-en">WHITE OAK</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="video-section">
+            <h2 class="lang-es">EL ARTE DE LA DESTILACIÓN</h2>
+            <h2 class="lang-en">THE ART OF DISTILLATION</h2>
+            <p class="lang-es">Acompaña a nuestros maestros tequileros en un recorrido por el proceso que da vida a Pozo Santo.</p>
+            <p class="lang-en">Join our master distillers on a journey through the process that brings Pozo Santo to life.</p>
+            
+            <div class="video-container" id="videoContainer">
+                <video id="procesoVideo" loop>
+                    <source src="video/procesovideo.mp4" type="video/mp4">
+                    Tu navegador no soporta videos.
+                </video>
+                <div class="play-button" id="playButton">
+                    <i class="fas fa-play"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-about">
+                <div class="footer-logo"><span>P</span>OZO SANTO</div>
+                <p class="lang-es">El espíritu de los dioses en cada gota. Tequila artesanal desde 1888.</p>
+                <p class="lang-en">The spirit of the gods in every drop. Artisanal tequila since 1888.</p>
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/tequilapozosanto/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/feritug/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://x.com/CrimsonDesert_" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.youtube.com/@TheKasaneru" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4 class="lang-es">EXPLORAR</h4>
+                <h4 class="lang-en">EXPLORE</h4>
+                <ul>
+                    <li><a href="index.html" class="lang-es">Inicio</a><a href="index.html" class="lang-en">Home</a></li>
+                    <li><a href="historia.html" class="lang-es">Historia</a><a href="historia.html" class="lang-en">Story</a></li>
+                    <li><a href="proceso.html" class="lang-es">Proceso</a><a href="proceso.html" class="lang-en">Process</a></li>
+                    <li><a href="tienda.html" class="lang-es">Tienda</a><a href="tienda.html" class="lang-en">Shop</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4 class="lang-es">LEGAL</h4>
+                <h4 class="lang-en">LEGAL</h4>
+                <ul>
+                    <li><a href="aviso-privacidad.html" class="lang-es">Aviso de Privacidad</a><a href="aviso-privacidad.html" class="lang-en">Privacy Policy</a></li>
+                    <li><a href="terminos.html" class="lang-es">Términos y Condiciones</a><a href="terminos.html" class="lang-en">Terms & Conditions</a></li>
+                    <li><a href="politica-envios.html" class="lang-es">Política de Envíos</a><a href="politica-envios.html" class="lang-en">Shipping Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4 class="lang-es">CONTACTO</h4>
+                <h4 class="lang-en">CONTACT</h4>
+                <ul>
+                    <li><a href="contacto.html" class="lang-es">Formulario</a><a href="contacto.html" class="lang-en">Form</a></li>
+                    <li><a href="faq.html" class="lang-es">Preguntas Frecuentes</a><a href="faq.html" class="lang-en">FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Pozo Santo. <span class="lang-es">Todos los derechos reservados.</span><span class="lang-en">All rights reserved.</span> | 
+            <a href="aviso-privacidad.html" class="lang-es">Aviso de Privacidad</a><a href="aviso-privacidad.html" class="lang-en">Privacy Policy</a> | 
+            <a href="terminos.html" class="lang-es">Términos</a><a href="terminos.html" class="lang-en">Terms</a></p>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            header.classList.toggle('scrolled', window.scrollY > 100);
+        });
+
+        function changeLanguage(lang) {
+            document.body.classList.remove('en', 'es');
+            document.body.classList.add(lang);
+            
+            document.querySelectorAll('.language-selector span').forEach(el => {
+                el.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        const savedLang = localStorage.getItem('preferredLanguage') || 'es';
+        document.body.classList.add(savedLang);
+        document.querySelectorAll('.language-selector span').forEach(el => {
+            if (el.textContent.toLowerCase() === savedLang) {
+                el.classList.add('active');
+            }
+        });
+
+        // Video player
+        const video = document.getElementById('procesoVideo');
+        const playButton = document.getElementById('playButton');
+        const videoContainer = document.getElementById('videoContainer');
+
+        playButton.addEventListener('click', function() {
+            if (video.paused) {
+                video.play();
+                playButton.style.opacity = '0';
+                setTimeout(() => {
+                    playButton.style.display = 'none';
+                }, 300);
+            }
+        });
+
+        video.addEventListener('click', function() {
+            if (video.paused) {
+                video.play();
+                playButton.style.opacity = '0';
+                setTimeout(() => {
+                    playButton.style.display = 'none';
+                }, 300);
+            } else {
+                video.pause();
+                playButton.style.display = 'flex';
+                setTimeout(() => {
+                    playButton.style.opacity = '1';
+                }, 10);
+            }
+        });
+
+        video.addEventListener('ended', function() {
+            playButton.style.display = 'flex';
+            setTimeout(() => {
+                playButton.style.opacity = '1';
+            }, 10);
+        });
+
+        // Actualizar contador del carrito
+        document.addEventListener('DOMContentLoaded', function() {
+            const cart = JSON.parse(localStorage.getItem('carritoPozoSanto')) || [];
+            const totalItems = cart.reduce((sum, item) => sum + (item.cantidad || 1), 0);
+            document.getElementById('cartCount').textContent = totalItems;
+        });
+    </script>
+    <script src="js/busqueda.js"></script>
+    <script src="js/carrito.js"></script>
+    <script src="js/sonidos.js"></script>
+</body>
+</html>

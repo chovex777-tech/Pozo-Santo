@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pozo Santo | Tequila Premium Mexicano</title>
+<link rel="icon" type="image/png" href="images/pozo-santo.ico">
+    <meta name="description" content="Tequila Pozo Santo: El espíritu de los dioses en cada gota. Descubre nuestra colección de tequilas blancos, reposados y añejos.">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/estilo.css">
+    <style>
+        /* Animación de flotado para la imagen */
+        @keyframes floatPozoSanto {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .hero-image {
+            position: relative;
+            height: 600px;
+            cursor: pointer;
+            animation: floatPozoSanto 4s ease-in-out infinite;
+        }
+        
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: all 0.3s ease;
+            filter: drop-shadow(0 20px 40px rgba(255,215,0,0.2));
+        }
+        
+        .hero-image:hover img {
+            transform: scale(1.08);
+            filter: drop-shadow(0 40px 80px rgba(255,215,0,0.6));
+        }
+/* FORZAR IDIOMAS */
+.lang-es { display: block !important; }
+.lang-en { display: none !important; }
+
+body.en .lang-es { display: none !important; }
+body.en .lang-en { display: block !important; }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <nav>
+           <a href="index.html" class="logo">
+    <img src="images/LOGO_POZO_SANTO.png" alt="Pozo Santo" style="height: 100px; width: auto;">
+</a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">INICIO</a></li>
+                <li><a href="historia.html">HISTORIA</a></li>
+                <li><a href="proceso.html">PROCESO</a></li>
+                <li><a href="tienda.html">TIENDA</a></li>
+                <li><a href="contacto.html">CONTACTO</a></li>
+            </ul>
+            <div class="nav-icons">
+                <i class="fas fa-search"></i>
+                <i class="fas fa-user"></i>
+                <div style="position: relative;">
+                    <i class="fas fa-shopping-cart" id="cartIcon"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </div>
+                <div class="language-selector">
+                    <span class="active" onclick="changeLanguage('es')">ES</span>
+                    <span onclick="changeLanguage('en')">EN</span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <!-- VIDEO DE FONDO -->
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="video/pozo-santo.mp4" type="video/mp4">
+            <!-- Fallback por si el video no carga -->
+            <div class="hero-video-fallback" style="background: url('images/pozo-santico.jpg') center/cover no-repeat;"></div>
+        </video>
+        
+        <div class="hero-overlay"></div>
+        
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="hero-subtitle lang-es">DESDE 1888</div>
+                <div class="hero-subtitle lang-en">SINCE 1888</div>
+                
+            <h1 class="hero-title">
+    <span class="lang-es">POZO SANTO · EL ESPÍRITU DE LOS DIOSES</span>
+    <span class="lang-en">POZO SANTO · THE SPIRIT OF THE GODS</span>
+</h1>
+                
+                <p class="hero-description lang-es">
+                    Seis generaciones de maestros tequileros han perfeccionado el equilibrio 
+                    entre tradición y excelencia en cada gota de Pozo Santo.
+                </p>
+                <p class="hero-description lang-en">
+                    Six generations of tequila masters have perfected the balance 
+                    between tradition and excellence in every drop of Pozo Santo.
+                </p>
+                
+                <div class="hero-buttons">
+                    <a href="tienda.html" class="btn btn-primary lang-es">EXPLORAR COLECCIÓN</a>
+                    <a href="tienda.html" class="btn btn-primary lang-en">EXPLORE COLLECTION</a>
+                    <a href="historia.html" class="btn btn-outline lang-es">NUESTRA HISTORIA</a>
+                    <a href="historia.html" class="btn btn-outline lang-en">OUR STORY</a>
+                </div>
+            </div>
+            
+            <!-- IMAGEN MODIFICADA: pozosantitoflotante.png -->
+            <div class="hero-image" onclick="window.location.href='tienda.html'">
+                <img src="images/pozosantitoflotante.png" alt="Pozo Santo Tequila">
+                <div class="hero-badge lang-es">100% AGAVE AZUL</div>
+                <div class="hero-badge lang-en">100% BLUE AGAVE</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-header">
+            <div class="section-subtitle lang-es">LA COLECCIÓN</div>
+            <div class="section-subtitle lang-en">THE COLLECTION</div>
+            <h2 class="section-title lang-es">TEQUILAS PREMIUM</h2>
+            <h2 class="section-title lang-en">PREMIUM TEQUILAS</h2>
+        </div>
+
+        <div class="products-grid">
+            <!-- Blanco -->
+            <div class="product-card" data-id="1" data-name="POZO SANTO BLANCO" data-price="300">
+                <div class="product-image" style="background-image: url('images/producto-pozosanto-blanco.jpg')"></div>
+                <div class="product-info">
+                    <div class="product-category">BLANCO</div>
+                    <h3 class="product-name">POZO SANTO BLANCO</h3>
+                    <div class="product-price">$850 <small>MXN</small></div>
+                    <div class="product-footer">
+                        <a href="producto.html?id=1" class="btn-product lang-es">VER DETALLES</a>
+                        <a href="producto.html?id=1" class="btn-product lang-en">VIEW DETAILS</a>
+                        <i class="far fa-heart" style="color: var(--oro);"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reposado -->
+            <div class="product-card" data-id="2" data-name="POZO SANTO REPOSADO" data-price="950">
+                <span class="product-badge lang-es">MÁS VENDIDO</span>
+                <span class="product-badge lang-en">BEST SELLER</span>
+                <div class="product-image" style="background-image: url('images/producto-pozosanto-reposado.jpg')"></div>
+                <div class="product-info">
+                    <div class="product-category">REPOSADO</div>
+                    <h3 class="product-name">POZO SANTO REPOSADO</h3>
+                    <div class="product-price">$350 <small>MXN</small></div>
+                    <div class="product-footer">
+                        <a href="producto.html?id=2" class="btn-product lang-es">VER DETALLES</a>
+                        <a href="producto.html?id=2" class="btn-product lang-en">VIEW DETAILS</a>
+                        <i class="far fa-heart" style="color: var(--oro);"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Añejo -->
+            <div class="product-card" data-id="3" data-name="POZO SANTO AÑEJO" data-price="1250">
+                <span class="product-badge lang-es">EDICIÓN LIMITADA</span>
+                <span class="product-badge lang-en">LIMITED EDITION</span>
+                <div class="product-image" style="background-image: url('images/producto-pozosanto-anejo.jpg')"></div>
+                <div class="product-info">
+                    <div class="product-category">AÑEJO</div>
+                    <h3 class="product-name">POZO SANTO AÑEJO</h3>
+                    <div class="product-price">$400 <small>MXN</small></div>
+                    <div class="product-footer">
+                        <a href="producto.html?id=3" class="btn-product lang-es">VER DETALLES</a>
+                        <a href="producto.html?id=3" class="btn-product lang-en">VIEW DETAILS</a>
+                        <i class="far fa-heart" style="color: var(--oro);"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sellos de Calidad -->
+    <section class="section">
+        <div class="seals-section">
+            <div class="section-header">
+                <div class="section-subtitle lang-es">AUTENTICIDAD</div>
+                <div class="section-subtitle lang-en">AUTHENTICITY</div>
+                <h2 class="section-title lang-es">CERTIFICACIONES</h2>
+                <h2 class="section-title lang-en">CERTIFICATIONS</h2>
+            </div>
+            
+            <div class="seals-grid">
+                <div class="seal-item">
+                    <img src="images/nom-logo.svg" alt="NOM">
+                    <p>NOM 1619</p>
+                </div>
+                <div class="seal-item">
+                    <img src="images/crt-logo.svg" alt="CRT">
+                    <p>CRT CERTIFIED</p>
+                </div>
+                <div class="seal-item">
+                    <img src="images/organic-logo.svg" alt="Organic">
+                    <p class="lang-es">ORGÁNICO</p>
+                    <p class="lang-en">ORGANIC</p>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- ===== TIENDAS FÍSICAS ===== -->
+<div class="stores-section">
+    <div class="section-header">
+        <div class="section-subtitle lang-es">ENCUÉNTRANOS</div>
+        <div class="section-subtitle lang-en">FIND US</div>
+        <h2 class="section-title lang-es">TIENDAS FÍSICAS</h2>
+        <h2 class="section-title lang-en">PHYSICAL STORES</h2>
+    </div>
+
+    <div class="stores-grid">
+        <!-- JALISCO - Destilería -->
+        <div class="store-card">
+            <div class="store-badge">JALISCO</div>
+            <h3>Destilería Pozo Santo</h3>
+            <p class="store-address">
+                <i class="fas fa-map-marker-alt"></i>
+                Carretera Internacional #497<br>
+                Col. Ex. Hda. de Abajo<br>
+                Tequila, Jalisco C.P. 46400
+            </p>
+            <p class="store-phone">
+                <i class="fas fa-phone"></i>
+                <a href="tel:3311030831">331 103 0831</a>
+            </p>
+        </div>
+
+        <!-- GUADALAJARA -->
+        <div class="store-card">
+            <div class="store-badge">GUADALAJARA</div>
+            <h3>Punto de Venta GDL</h3>
+            <p class="store-address">
+                <i class="fas fa-map-marker-alt"></i>
+                Av. Vallarta 2520<br>
+                Col. Arcos Vallarta<br>
+                Guadalajara, Jalisco
+            </p>
+            <p class="store-phone">
+                <i class="fas fa-phone"></i>
+                <a href="tel:3311030831">331 103 0831</a>
+            </p>
+        </div>
+
+        <!-- CDMX - Próximamente -->
+        <div class="store-card coming-soon">
+            <div class="store-badge">PRÓXIMAMENTE</div>
+            <h3>Ciudad de México</h3>
+            <p class="store-address">
+                <i class="fas fa-map-marker-alt"></i>
+                Próxima apertura 2025<br>
+                Zona Polanco<br>
+                Ciudad de México
+            </p>
+            <p class="store-phone">
+                <i class="fas fa-clock"></i>
+                <span>Próximamente</span>
+            </p>
+        </div>
+    </div>
+</div>
+<!-- ===== SECCIÓN INSTAGRAM / CINTA DE IMÁGENES ===== -->
+<section class="instagram-section">
+    <div class="section-header">
+        <div class="section-subtitle lang-es">COMPARTE</div>
+        <div class="section-subtitle lang-en">SHARE</div>
+        <h2 class="section-title lang-es">#TEQUILAPOZOSANTO</h2>
+        <h2 class="section-title lang-en">#TEQUILAPOZOSANTO</h2>
+    </div>
+
+    <!-- Video + Texto -->
+    <div class="instagram-top">
+        <div class="instagram-video-container">
+            <video class="instagram-video" autoplay muted loop playsinline>
+                <source src="video/aversion.mp4" type="video/mp4">
+            </video>
+            <div class="instagram-overlay-text">
+                <span>CHACUITO</span>
+                <span>GRANADA 2016</span>
+                <span>100% AGAVE</span>
+                <span>AGAVITA</span>
+            </div>
+        </div>
+        <div class="instagram-text">
+            <h3>SHARE YOUR PHOTOS WITH</h3>
+            <h2>#TEQUILAPOZOSANTO</h2>
+            <div class="instagram-social">
+                <a href="https://www.instagram.com/feritug/" target="_blank" class="social-btn">
+                    <i class="fab fa-instagram"></i> @SIGUENOS EN INSTAGRAM
+                </a>
+                <a href="https://www.facebook.com/tequilapozosanto/" target="_blank" class="social-btn">
+                    <i class="fab fa-facebook-f"></i> @SIGUENOS EN FACEBOOK
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cinta transportadora de imágenes -->
+    <div class="carousel-container">
+        <div class="carousel-track">
+            <img src="images/decorative1.jpeg" alt="Decorative 1">
+            <img src="images/decorative2.jpeg" alt="Decorative 2">
+            <img src="images/decorative3.jpeg" alt="Decorative 3">
+            <img src="images/decorative4.jpeg" alt="Decorative 4">
+            <img src="images/decorative5.jpeg" alt="Decorative 5">
+            <img src="images/decorative6.jpeg" alt="Decorative 6">
+            <!-- Duplicadas para efecto infinito -->
+            <img src="images/decorative1.jpeg" alt="Decorative 1">
+            <img src="images/decorative2.jpeg" alt="Decorative 2">
+            <img src="images/decorative3.jpeg" alt="Decorative 3">
+            <img src="images/decorative4.jpeg" alt="Decorative 4">
+            <img src="images/decorative5.jpeg" alt="Decorative 5">
+            <img src="images/decorative6.jpeg" alt="Decorative 6">
+        </div>
+    </div>
+</section>
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-about">
+                <div class="footer-logo"><span>P</span>OZO SANTO</div>
+                <p class="lang-es">El espíritu de los dioses en cada gota. Tequila artesanal desde 1888.</p>
+                <p class="lang-en">The spirit of the gods in every drop. Artisanal tequila since 1888.</p>
+             <div class="footer-social">
+    <!-- Facebook -->
+    <a href="https://www.facebook.com/tequilapozosanto/" target="_blank" rel="noopener noreferrer" class="social-icon" title="Facebook">
+        <i class="fab fa-facebook-f"></i>
+    </a>
+    
+    <!-- Instagram (de feritug) -->
+    <a href="https://www.instagram.com/feritug/?e=ddac3061-294c-4cd8-9319-5d8434b499f9&g=5" target="_blank" rel="noopener noreferrer" class="social-icon" title="Instagram">
+        <i class="fab fa-instagram"></i>
+    </a>
+    
+    <!-- X / Twitter -->
+    <a href="https://x.com/CrimsonDesert_?lang=es" target="_blank" rel="noopener noreferrer" class="social-icon" title="X (Twitter)">
+        <i class="fab fa-twitter"></i>
+    </a>
+    
+    <!-- YouTube -->
+    <a href="https://www.youtube.com/@TheKasaneru" target="_blank" rel="noopener noreferrer" class="social-icon" title="YouTube">
+        <i class="fab fa-youtube"></i>
+    </a>
+</div>
+            </div>
+            <div class="footer-links">
+                <h4 class="lang-es">EXPLORAR</h4>
+                <h4 class="lang-en">EXPLORE</h4>
+                <ul>
+                    <li><a href="index.html" class="lang-es">Inicio</a><a href="index.html" class="lang-en">Home</a></li>
+                    <li><a href="historia.html" class="lang-es">Historia</a><a href="historia.html" class="lang-en">Story</a></li>
+                    <li><a href="proceso.html" class="lang-es">Proceso</a><a href="proceso.html" class="lang-en">Process</a></li>
+                    <li><a href="tienda.html" class="lang-es">Tienda</a><a href="tienda.html" class="lang-en">Shop</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4 class="lang-es">LEGAL</h4>
+                <h4 class="lang-en">LEGAL</h4>
+                <ul>
+                    <li><a href="aviso-privacidad.html" class="lang-es">Aviso de Privacidad</a><a href="aviso-privacidad.html" class="lang-en">Privacy Policy</a></li>
+                    <li><a href="terminos.html" class="lang-es">Términos y Condiciones</a><a href="terminos.html" class="lang-en">Terms & Conditions</a></li>
+                    <li><a href="politica-envios.html" class="lang-es">Política de Envíos</a><a href="politica-envios.html" class="lang-en">Shipping Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4 class="lang-es">CONTACTO</h4>
+                <h4 class="lang-en">CONTACT</h4>
+                <ul>
+                    <li><a href="contacto.html" class="lang-es">Formulario</a><a href="contacto.html" class="lang-en">Form</a></li>
+                    <li><a href="faq.html" class="lang-es">Preguntas Frecuentes</a><a href="faq.html" class="lang-en">FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Pozo Santo. <span class="lang-es">Todos los derechos reservados.</span><span class="lang-en">All rights reserved.</span> | 
+            <a href="aviso-privacidad.html" class="lang-es">Aviso de Privacidad</a><a href="aviso-privacidad.html" class="lang-en">Privacy Policy</a> | 
+            <a href="terminos.html" class="lang-es">Términos</a><a href="terminos.html" class="lang-en">Terms</a></p>
+        </div>
+    </footer>
+    
+<script>
+    // ===== 1. VERIFICACIÓN DE EDAD (PRIMERO) =====
+    (function() {
+        if (!sessionStorage.getItem('ageVerified')) {
+            window.location.href = 'age-gate.html';
+            return;
+        }
+    })();
+
+    // ===== 2. FUNCIONES PRINCIPALES =====
+    function changeLanguage(lang) {
+        document.body.classList.remove('en', 'es');
+        document.body.classList.add(lang);
+        
+        document.querySelectorAll('.language-selector span').forEach(el => {
+            el.classList.remove('active');
+        });
+        event.target.classList.add('active');
+        
+        localStorage.setItem('preferredLanguage', lang);
+    }
+
+    // Header scroll effect
+    window.addEventListener('scroll', function() {
+        const header = document.getElementById('header');
+        if (window.scrollY > 100) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+
+    // Load preferred language
+    const savedLang = localStorage.getItem('preferredLanguage') || 'es';
+    document.body.classList.add(savedLang);
+    document.querySelectorAll('.language-selector span').forEach(el => {
+        if (el.textContent.toLowerCase() === savedLang) {
+            el.classList.add('active');
+        }
+    });
+
+    // Cart functionality
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    document.getElementById('cartCount').textContent = cart.reduce((a, b) => a + (b.quantity || 1), 0);
+
+    // ===== 3. EASTER EGG: KONAMI =====
+    (function() {
+        const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+        let konamiIndex = 0;
+        
+        const secretImage = document.createElement('div');
+        secretImage.id = 'secretImage';
+        secretImage.innerHTML = '<img src="images/SXB.jfif" alt="???" style="width: 100%; height: 100%; object-fit: cover;">';
+        secretImage.style.cssText = `
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: black;
+            z-index: 9999;
+            display: none;
+            justify-content: center;
+            align-items: center;
+        `;
+        document.body.appendChild(secretImage);
+
+        document.addEventListener('keydown', function(e) {
+            if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+            const key = e.key;
+            
+            if (key === konamiCode[konamiIndex]) {
+                konamiIndex++;
+                if (konamiIndex === konamiCode.length) {
+                    secretImage.style.display = 'flex';
+                    setTimeout(() => secretImage.style.display = 'none', 200);
+                    konamiIndex = 0;
+                }
+            } else {
+                konamiIndex = 0;
+            }
+        });
+    })();
+
+    // ===== 4. EASTER EGG: MARICA =====
+    (function() {
+        const secretWord = ['m', 'a', 'r', 'i', 'c', 'a'];
+        let currentIndex = 0;
+
+        document.addEventListener('keydown', function(e) {
+            if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+            const key = e.key.toLowerCase();
+
+            if (key === secretWord[currentIndex]) {
+                currentIndex++;
+                if (currentIndex === secretWord.length) {
+                    document.body.style.transition = 'all 0.3s';
+                    document.body.style.filter = 'brightness(1.5) hue-rotate(90deg)';
+                    setTimeout(() => {
+                        window.location.href = 'https://youtu.be/Grt6Hw-WVDk?si=KK1GYlvc9mhr_db4';
+                    }, 300);
+                    currentIndex = 0;
+                }
+            } else {
+                currentIndex = 0;
+            }
+        });
+    })();
+</script>
+
+<script src="js/busqueda.js"></script>
+<script src="js/carrito.js"></script>
+<script src="js/sonidos.js"></script>
+</body>
+</html>

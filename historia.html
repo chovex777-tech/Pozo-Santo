@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestra Historia | Pozo Santo</title>
+  <link rel="icon" type="image/png" href="images/pozo-santo.ico">
+    <meta name="description" content="Descubre la leyenda del Pozo Santo: seis generaciones de tradición tequilera en las tierras altas de Jalisco.">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/estilo.css">
+    <style>
+        /* Estilos específicos para la página de historia */
+        .page-header {
+            height: 70vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .page-header-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('images/pozo-santico.jpg') center/cover no-repeat;
+            z-index: -2;
+        }
+
+        .page-header-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.5) 100%);
+            z-index: -1;
+        }
+
+        .page-header-content {
+            max-width: 900px;
+            padding: 0 20px;
+        }
+
+        .page-header-subtitle {
+            color: var(--oro);
+            font-size: 16px;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .page-header-title {
+            font-size: 60px;
+            margin-bottom: 30px;
+            line-height: 1.1;
+        }
+
+        .page-header-title span {
+            color: var(--oro);
+            display: block;
+            font-size: 90px;
+            margin-top: -15px;
+        }
+
+        .page-header-text {
+            font-size: 16px;
+            color: #CCC;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* Leyenda Section */
+        .legend-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 100px;
+        }
+
+        .legend-content h2 {
+            font-size: 56px;
+            margin-bottom: 30px;
+            color: var(--oro);
+            line-height: 1.2;
+        }
+
+        .legend-content p {
+            color: #CCC;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .legend-quote {
+            border-left: 3px solid var(--oro);
+            padding: 30px 40px;
+            background: rgba(255,215,0,0.03);
+            margin: 40px 0;
+            font-style: italic;
+            font-size: 18px;
+            color: var(--blanco);
+            position: relative;
+        }
+
+        .legend-quote i {
+            color: var(--oro);
+            font-size: 32px;
+            margin-right: 15px;
+            opacity: 0.5;
+        }
+
+        .legend-quote p {
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .legend-quote-author {
+            color: var(--oro);
+            font-size: 14px;
+            letter-spacing: 2px;
+            margin-top: 15px;
+        }
+
+        .legend-image {
+            position: relative;
+            height: 700px;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+        }
+
+        .legend-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .legend-image-caption {
+            position: absolute;
+            bottom: 30px;
+            left: 30px;
+            background: rgba(0,0,0,0.8);
+            padding: 15px 30px;
+            border-radius: 50px;
+            border: 1px solid var(--oro);
+            color: var(--blanco);
+            font-size: 14px;
+            letter-spacing: 2px;
+            backdrop-filter: blur(5px);
+        }
+
+        .legend-image-caption i {
+            color: var(--oro);
+            margin-right: 10px;
+        }
+
+        /* Timeline Section */
+        .timeline-section {
+            margin: 100px 0;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-subtitle {
+            color: var(--oro);
+            font-size: 14px;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .section-title {
+            font-size: 48px;
+            color: var(--blanco);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--oro), transparent);
+        }
+
+        .timeline {
+            position: relative;
+            padding: 50px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent, var(--oro), var(--oro), transparent);
+        }
+
+        .timeline-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 100px;
+            position: relative;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-year {
+            font-size: 120px;
+            color: var(--oro);
+            font-family: 'Cormorant Garamond', serif;
+            opacity: 0.15;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-weight: 700;
+            z-index: 0;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-year {
+            right: 0;
+        }
+
+        .timeline-item:nth-child(even) .timeline-year {
+            left: 0;
+        }
+
+        .timeline-content {
+            width: 40%;
+            padding: 40px;
+            background: linear-gradient(135deg, var(--negro-profundo) 0%, var(--negro) 100%);
+            border: 1px solid rgba(255,215,0,0.2);
+            border-radius: 20px;
+            position: relative;
+            z-index: 1;
+            transition: all 0.3s;
+        }
+
+        .timeline-content:hover {
+            border-color: var(--oro);
+            transform: scale(1.02);
+            box-shadow: 0 20px 40px rgba(255,215,0,0.1);
+        }
+
+        .timeline-content h3 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            color: var(--oro);
+        }
+
+        .timeline-content p {
+            color: #CCC;
+            line-height: 1.8;
+            font-size: 15px;
+        }
+
+        .timeline-icon {
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 60px;
+            background: var(--oro);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--negro);
+            font-size: 24px;
+            border: 3px solid var(--negro);
+            box-shadow: 0 0 30px rgba(255,215,0,0.3);
+        }
+
+        /* Family Section */
+        .family-section {
+            margin: 120px 0;
+        }
+
+        .family-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .family-card {
+            text-align: center;
+            padding: 40px 30px;
+            background: linear-gradient(135deg, var(--negro-profundo) 0%, var(--negro) 100%);
+            border: 1px solid rgba(255,215,0,0.2);
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+
+        .family-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--oro);
+        }
+
+        .family-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 0 auto 30px;
+            border: 3px solid var(--oro);
+            padding: 5px;
+            overflow: hidden;
+        }
+
+        .family-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .family-card h3 {
+            font-size: 28px;
+            margin-bottom: 5px;
+            color: var(--blanco);
+        }
+
+        .family-card p {
+            color: var(--oro);
+            font-size: 14px;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .family-card .family-desc {
+            color: #999;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* Legacy Numbers */
+        .legacy-section {
+            background: linear-gradient(135deg, var(--negro-profundo) 0%, var(--negro) 100%);
+            border: 1px solid rgba(255,215,0,0.2);
+            border-radius: 30px;
+            padding: 80px;
+            text-align: center;
+            margin: 100px 0;
+        }
+
+        .legacy-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .legacy-item {
+            text-align: center;
+        }
+
+        .legacy-number {
+            font-size: 64px;
+            color: var(--oro);
+            font-weight: 600;
+            font-family: 'Cormorant Garamond', serif;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        .legacy-label {
+            color: #999;
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .page-header-title { font-size: 60px; }
+            .page-header-title span { font-size: 80px; }
+            .legend-section { grid-template-columns: 1fr; }
+            .legend-image { height: 500px; }
+            .timeline::before { left: 30px; }
+            .timeline-item { flex-direction: column !important; margin-bottom: 60px; }
+            .timeline-content { width: 90%; margin-left: 0; }
+            .timeline-year { position: relative; top: 0; transform: none; margin-bottom: 20px; font-size: 60px; opacity: 0.3; }
+            .family-grid { grid-template-columns: repeat(2, 1fr); }
+            .legacy-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .page-header-title { font-size: 40px; }
+            .page-header-title span { font-size: 60px; }
+            .family-grid { grid-template-columns: 1fr; }
+            .legacy-grid { grid-template-columns: 1fr; }
+            .legend-quote { padding: 20px; }
+        }
+/* FORZAR IDIOMAS (solo para prueba) */
+.lang-es { display: block !important; }
+.lang-en { display: none !important; }
+
+body.en .lang-es { display: none !important; }
+body.en .lang-en { display: block !important; }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <nav>
+            <a href="index.html" class="logo">
+                <img src="images/LOGO_POZO_SANTO.png" alt="Pozo Santo" style="height: 100px; width: auto;">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">INICIO</a></li>
+                <li><a href="historia.html" class="active">HISTORIA</a></li>
+                <li><a href="proceso.html">PROCESO</a></li>
+                <li><a href="tienda.html">TIENDA</a></li>
+                <li><a href="contacto.html">CONTACTO</a></li>
+            </ul>
+            <div class="nav-icons">
+                <i class="fas fa-search"></i>
+                <i class="fas fa-user"></i>
+                <div style="position: relative;">
+                    <i class="fas fa-shopping-cart" id="cartIcon"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </div>
+                <div class="language-selector">
+                    <span class="active" onclick="changeLanguage('es')">ES</span>
+                    <span onclick="changeLanguage('en')">EN</span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="page-header-bg"></div>
+        <div class="page-header-overlay"></div>
+        <div class="page-header-content">
+            <div class="page-header-subtitle lang-es">DESDE 1888</div>
+            <div class="page-header-subtitle lang-en">SINCE 1888</div>
+            <h1 class="page-header-title">
+    <span class="lang-es">LA LEYENDA DE POZO SANTO</span>
+    <span class="lang-en">THE LEGEND OF POZO SANTO</span>
+</h1>
+            <p class="page-header-text lang-es">
+                Seis generaciones de maestros tequileros han custodiado el secreto del pozo sagrado, 
+                donde el agua y la tierra se unen para crear el espíritu más puro del agave.
+            </p>
+            <p class="page-header-text lang-en">
+                Six generations of master distillers have guarded the secret of the sacred well, 
+                where water and earth unite to create the purest spirit of the agave.
+            </p>
+        </div>
+    </section>
+
+    <!-- Leyenda Section -->
+    <section class="section">
+        <div class="legend-section">
+            <div class="legend-content">
+                <h2 class="lang-es">EL DESCUBRIMIENTO DEL POZO SAGRADO</h2>
+                <h2 class="lang-en">THE DISCOVERY OF THE SACRED WELL</h2>
+                
+                <p class="lang-es">Corría el año 1888 cuando Don José María Heredero, un jinete errante, se adentró en las tierras áridas de Jalisco persiguiendo un sueño. Tras días de cabalgata bajo el sol implacable, el hombre y su caballo estaban al borde de la desesperación, sedientos y perdidos.</p>
+                <p class="lang-en">It was the year 1888 when Don José María Heredero, a wandering rider, ventured into the arid lands of Jalisco chasing a dream. After days of riding under the relentless sun, the man and his horse were on the brink of despair, thirsty and lost.</p>
+                
+                <p class="lang-es">Cuando todo parecía perdido, el caballo se detuvo y comenzó a escarbar la tierra con furia. Don José María, confundido, observó cómo de entre las grietas comenzó a brotar un pequeño manantial de agua cristalina. Al beber de sus aguas, sintió un vigor renovado y una claridad mental como nunca antes había experimentado.</p>
+                <p class="lang-en">When all seemed lost, the horse stopped and began to dig the earth with fury. Don José María, confused, watched as a small spring of crystalline water began to flow from the cracks. Upon drinking from its waters, he felt renewed vigor and mental clarity like never before.</p>
+                
+                <div class="legend-quote">
+                    <i class="fas fa-quote-left"></i>
+                    <p class="lang-es">"Esta agua tiene un sabor distinto, como si la tierra misma hubiera destilado el espíritu de los dioses. Este lugar es sagrado."</p>
+                    <p class="lang-en">"This water has a distinct taste, as if the earth itself had distilled the spirit of the gods. This place is sacred."</p>
+                    <div class="legend-quote-author">— DON JOSÉ MARÍA HEREDERO</div>
+                </div>
+                
+                <p class="lang-es">Convencido de haber encontrado un lugar bendecido, Don José María decidió establecer ahí su hogar. Construyó una pequeña choza junto al pozo y plantó los primeros agaves, sin saber que estaba dando inicio a un legado que perduraría por más de un siglo.</p>
+                <p class="lang-en">Convinced he had found a blessed place, Don José María decided to establish his home there. He built a small hut next to the well and planted the first agaves, unaware that he was beginning a legacy that would last for over a century.</p>
+            </div>
+            
+            <div class="legend-image">
+                <img src="images/casona.jpg" alt="El Pozo Santo">
+                <div class="legend-image-caption">
+                    <i class="fas fa-water"></i>
+                    <span class="lang-es">EL POZO SAGRADO - JALISCO</span>
+                    <span class="lang-en">THE SACRED WELL - JALISCO</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="timeline-section">
+        <div class="section-header">
+            <div class="section-subtitle lang-es">CRÓNICA FAMILIAR</div>
+            <div class="section-subtitle lang-en">FAMILY CHRONICLE</div>
+            <h2 class="section-title lang-es">LA HISTORIA VIVA</h2>
+            <h2 class="section-title lang-en">THE LIVING HISTORY</h2>
+        </div>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-year">1888</div>
+                <div class="timeline-content">
+                    <div class="timeline-icon"><i class="fas fa-tree"></i></div>
+                    <h3 class="lang-es">EL DESCUBRIMIENTO</h3>
+                    <h3 class="lang-en">THE DISCOVERY</h3>
+                    <p class="lang-es">Don José María Heredero descubre el pozo sagrado y planta los primeros 100 agaves. Nace la leyenda de Pozo Santo.</p>
+                    <p class="lang-en">Don José María Heredero discovers the sacred well and plants the first 100 agaves. The legend of Pozo Santo is born.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-year">1910</div>
+                <div class="timeline-content">
+                    <div class="timeline-icon"><i class="fas fa-flask"></i></div>
+                    <h3 class="lang-es">PRIMERA DESTILACIÓN</h3>
+                    <h3 class="lang-en">FIRST DISTILLATION</h3>
+                    <p class="lang-es">La familia construye su primer alambique de cobre y produce el primer lote de tequila, utilizando el agua del pozo sagrado.</p>
+                    <p class="lang-en">The family builds their first copper still and produces the first batch of tequila, using water from the sacred well.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-year">1945</div>
+                <div class="timeline-content">
+                    <div class="timeline-icon"><i class="fas fa-wine-bottle"></i></div>
+                    <h3 class="lang-es">PRIMERA BOTELLA</h3>
+                    <h3 class="lang-en">FIRST BOTTLE</h3>
+                    <p class="lang-es">Se embotella el primer tequila con la marca "Pozo Santo" y se comienza a vender en las cantinas de Guadalajara.</p>
+                    <p class="lang-en">The first tequila is bottled under the "Pozo Santo" brand and begins to be sold in the cantinas of Guadalajara.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-year">1955</div>
+                <div class="timeline-content">
+                    <div class="timeline-icon"><i class="fas fa-trophy"></i></div>
+                    <h3 class="lang-es">PRIMER PREMIO</h3>
+                    <h3 class="lang-en">FIRST AWARD</h3>
+                    <p class="lang-es">Pozo Santo gana su primer reconocimiento internacional en la Feria de Sevilla, España.</p>
+                    <p class="lang-en">Pozo Santo wins its first international recognition at the Seville Fair in Spain.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-year">1988</div>
+                <div class="timeline-content">
+                    <div class="timeline-icon"><i class="fas fa-100"></i></div>
+                    <h3 class="lang-es">CENTENARIO</h3>
+                    <h3 class="lang-en">CENTENNIAL</h3>
+                    <p class="lang-es">Se celebra el centenario de la fundación con la publicación del libro "La Leyenda del Pozo Santo".</p>
+                    <p class="lang-en">The centennial of the foundation is celebrated with the publication of the book "The Legend of the Holy Well."</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-year">2024</div>
+                <div class="timeline-content">
+                    <div class="timeline-icon"><i class="fas fa-globe"></i></div>
+                    <h3 class="lang-es">EXPANSIÓN GLOBAL</h3>
+                    <h3 class="lang-en">GLOBAL EXPANSION</h3>
+                    <p class="lang-es">La sexta generación de la familia Heredero lleva el espíritu de Pozo Santo a más de 25 países alrededor del mundo.</p>
+                    <p class="lang-en">The sixth generation of the Heredero family carries the spirit of Pozo Santo to more than 25 countries around the world.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Family Section - CON LAS NUEVAS IMÁGENES -->
+    <section class="section">
+    <div class="section-header">
+        <div class="section-subtitle lang-es">SEIS GENERACIONES</div>
+        <div class="section-subtitle lang-en">SIX GENERATIONS</div>
+        <h2 class="section-title lang-es">LA FAMILIA HEREDERO</h2>
+        <h2 class="section-title lang-en">THE HEREDERO FAMILY</h2>
+    </div>
+
+    <div class="family-grid">
+        <!-- José María - cruzmaria.jpeg -->
+        <div class="family-card">
+            <div class="family-image">
+                <img src="images/cruzmaria.jpeg" alt="José María Heredero">
+            </div>
+            <h3>José María</h3>
+            <p class="lang-es">Fundador (1888-1920)</p>
+            <p class="lang-en">Founder (1888-1920)</p>
+            <p class="family-desc lang-es">El visionario que descubrió el pozo sagrado y plantó la semilla de un legado eterno.</p>
+            <p class="family-desc lang-en">The visionary who discovered the sacred well and planted the seed of an eternal legacy.</p>
+        </div>
+            <!-- Carlos - albertoguzman.jpg -->
+        <div class="family-card">
+            <div class="family-image">
+                <img src="images/albertoguzman.jpeg" alt="Carlos Heredero">
+            </div>
+            <h3>Carlos</h3>
+            <p class="lang-es">2da Generación (1920-1950)</p>
+            <p class="lang-en">2nd Generation (1920-1950)</p>
+            <p class="family-desc lang-es">Construyó la primera destilería y profesionalizó la producción del tequila.</p>
+            <p class="family-desc lang-en">Built the first distillery and professionalized tequila production.</p>
+        </div>
+
+            <!-- Fernando - carnalpulpo.jpg -->
+            <div class="family-card">
+                <div class="family-image">
+                    <img src="images/carnalpulpo.jpg" alt="Fernando Heredero">
+                </div>
+                <h3>Fernando</h3>
+                <p class="lang-es">3ra Generación (1950-1975)</p>
+                <p class="lang-en">3rd Generation (1950-1975)</p>
+                <p class="family-desc lang-es">Internacionalizó la marca y obtuvo los primeros reconocimientos mundiales.</p>
+                <p class="family-desc lang-en">Internationalized the brand and obtained the first worldwide recognitions.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Legacy Section -->
+    <section class="section">
+        <div class="legacy-section">
+            <div class="section-header">
+                <div class="section-subtitle lang-es">EL LEGADO</div>
+                <div class="section-subtitle lang-en">THE LEGACY</div>
+                <h2 class="section-title lang-es">EN NÚMEROS</h2>
+                <h2 class="section-title lang-en">IN NUMBERS</h2>
+            </div>
+
+            <div class="legacy-grid">
+                <div class="legacy-item">
+                    <div class="legacy-number">136</div>
+                    <div class="legacy-label lang-es">AÑOS DE HISTORIA</div>
+                    <div class="legacy-label lang-en">YEARS OF HISTORY</div>
+                </div>
+                <div class="legacy-item">
+                    <div class="legacy-number">6</div>
+                    <div class="legacy-label lang-es">GENERACIONES</div>
+                    <div class="legacy-label lang-en">GENERATIONS</div>
+                </div>
+                <div class="legacy-item">
+                    <div class="legacy-number">25+</div>
+                    <div class="legacy-label lang-es">PAÍSES</div>
+                    <div class="legacy-label lang-en">COUNTRIES</div>
+                </div>
+                <div class="legacy-item">
+                    <div class="legacy-number">150+</div>
+                    <div class="legacy-label lang-es">PREMIOS</div>
+                    <div class="legacy-label lang-en">AWARDS</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-about">
+                <div class="footer-logo"><span>P</span>OZO SANTO</div>
+                <p class="lang-es">El espíritu de los dioses en cada gota. Tequila artesanal desde 1888.</p>
+                <p class="lang-en">The spirit of the gods in every drop. Artisanal tequila since 1888.</p>
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/tequilapozosanto/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/feritug/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://x.com/CrimsonDesert_" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.youtube.com/@TheKasaneru" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4 class="lang-es">EXPLORAR</h4>
+                <h4 class="lang-en">EXPLORE</h4>
+                <ul>
+                    <li><a href="index.html" class="lang-es">Inicio</a><a href="index.html" class="lang-en">Home</a></li>
+                    <li><a href="historia.html" class="lang-es">Historia</a><a href="historia.html" class="lang-en">Story</a></li>
+                    <li><a href="proceso.html" class="lang-es">Proceso</a><a href="proceso.html" class="lang-en">Process</a></li>
+                    <li><a href="tienda.html" class="lang-es">Tienda</a><a href="tienda.html" class="lang-en">Shop</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4 class="lang-es">LEGAL</h4>
+                <h4 class="lang-en">LEGAL</h4>
+                <ul>
+                    <li><a href="aviso-privacidad.html">Aviso de Privacidad</a></li>
+                    <li><a href="terminos.html">Términos y Condiciones</a></li>
+                    <li><a href="politica-envios.html">Política de Envíos</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4 class="lang-es">CONTACTO</h4>
+                <h4 class="lang-en">CONTACT</h4>
+                <ul>
+                    <li><a href="contacto.html">Formulario</a></li>
+                    <li><a href="faq.html">Preguntas Frecuentes</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Pozo Santo. <span class="lang-es">Todos los derechos reservados.</span><span class="lang-en">All rights reserved.</span> | 
+            <a href="aviso-privacidad.html">Aviso de Privacidad</a> | 
+            <a href="terminos.html">Términos</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Language switcher
+        function changeLanguage(lang) {
+            document.body.classList.remove('en', 'es');
+            document.body.classList.add(lang);
+            
+            document.querySelectorAll('.language-selector span').forEach(el => {
+                el.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        // Load preferred language
+        const savedLang = localStorage.getItem('preferredLanguage') || 'es';
+        document.body.classList.add(savedLang);
+        document.querySelectorAll('.language-selector span').forEach(el => {
+            if (el.textContent.toLowerCase() === savedLang) {
+                el.classList.add('active');
+            }
+        });
+
+        // Cart functionality
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        document.getElementById('cartCount').textContent = cart.length;
+// Verificar clases de idioma al cargar la página
+console.log('Clase actual del body:', document.body.className);
+console.log('Elementos visibles en español:', document.querySelectorAll('.lang-es:not([style*="display: none"])').length);
+console.log('Elementos visibles en inglés:', document.querySelectorAll('.lang-en:not([style*="display: none"])').length);
+    </script>
+<script>
+    // ===== EASTER EGG ÉPICO: "wearecharliekirk" CON CANCIÓN =====
+    (function() {
+        const secretWord = ['w','e','a','r','e','c','h','a','r','l','i','e','k','i','r','k'];
+        let currentIndex = 0;
+        let originalImages = [];
+        let audioReproduciendo = false;
+
+        // Crear elemento de audio
+        const audioCharlie = new Audio('audio/somoscharlie.mp3');
+        audioCharlie.volume = 0.7;
+        audioCharlie.loop = true; // Para que se repita mientras dura el efecto
+
+        document.addEventListener('keydown', function(e) {
+            // Ignorar si están escribiendo en un input
+            if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+
+            const key = e.key.toLowerCase();
+
+            // Verificar si la tecla coincide con la siguiente en la secuencia
+            if (key === secretWord[currentIndex]) {
+                currentIndex++;
+
+                // Si completó la palabra completa
+                if (currentIndex === secretWord.length) {
+                    // ACTIVAR EASTER EGG
+                    activarCharlieMode();
+                    
+                    // Reiniciar contador
+                    currentIndex = 0;
+                }
+            } else {
+                // Si se equivoca, reiniciar
+                currentIndex = 0;
+            }
+        });
+        
+        function activarCharlieMode() {
+            console.log('🎭 MODO CHARLIE KIRK ACTIVADO');
+            
+            // 1. REPRODUCIR CANCIÓN
+            if (audioCharlie.paused) {
+                audioCharlie.currentTime = 0;
+                audioCharlie.play().catch(e => console.log('Error al reproducir:', e));
+                audioReproduciendo = true;
+            }
+            
+            // 2. CAMBIAR IMÁGENES DE LOS FUNDADORES
+            const familyImages = document.querySelectorAll('.family-image img');
+            
+            familyImages.forEach((img, index) => {
+                // Guardar imagen original si no está guardada
+                if (!originalImages[index]) {
+                    originalImages[index] = img.src;
+                }
+                // Cambiar por la imagen secreta
+                img.src = 'images/images.jfif';
+                img.style.transition = 'all 0.5s';
+                img.style.transform = 'scale(1.1) rotate(2deg)';
+                img.style.border = '3px solid var(--oro)';
+                img.style.boxShadow = '0 0 30px gold';
+            });
+            
+            // 3. CAMBIAR LA IMAGEN DEL POZO (opcional)
+            const legendImage = document.querySelector('.legend-image img');
+            if (legendImage) {
+                if (!originalImages[10]) originalImages[10] = legendImage.src;
+                legendImage.src = 'images/images.jfif';
+                legendImage.style.transform = 'scale(1.05)';
+                legendImage.style.border = '3px solid gold';
+            }
+            
+            // 4. EFECTO VISUAL EN LA PÁGINA
+            document.body.style.transition = 'all 0.5s';
+            document.body.style.filter = 'hue-rotate(180deg) drop-shadow(0 0 20px gold)';
+            
+            // 5. RESTAURAR TODO DESPUÉS DE 10 SEGUNDOS
+            setTimeout(() => {
+                restaurarNormalidad();
+            }, 10000); // 10 segundos de desmadre
+        }
+        
+        function restaurarNormalidad() {
+            console.log('✨ Restaurando normalidad...');
+            
+            // 1. DETENER CANCIÓN
+            if (audioReproduciendo) {
+                audioCharlie.pause();
+                audioCharlie.currentTime = 0;
+                audioReproduciendo = false;
+            }
+            
+            // 2. RESTAURAR IMÁGENES DE FUNDADORES
+            const familyImages = document.querySelectorAll('.family-image img');
+            familyImages.forEach((img, index) => {
+                if (originalImages[index]) {
+                    img.src = originalImages[index];
+                    img.style.transform = '';
+                    img.style.border = '';
+                    img.style.boxShadow = '';
+                }
+            });
+            
+            // 3. RESTAURAR IMAGEN DEL POZO
+            const legendImage = document.querySelector('.legend-image img');
+            if (legendImage && originalImages[10]) {
+                legendImage.src = originalImages[10];
+                legendImage.style.transform = '';
+                legendImage.style.border = '';
+            }
+            
+            // 4. RESTAURAR EFECTOS VISUALES
+            document.body.style.filter = '';
+            
+            // 5. LIMPIAR ARRAY (opcional, para que se pueda volver a activar)
+            // originalImages = [];
+        }
+    })();
+</script>
+    <script src="js/busqueda.js"></script>
+    <script src="js/carrito.js"></script>
+    <script src="js/sonidos.js"></script>
+</body>
+</html>

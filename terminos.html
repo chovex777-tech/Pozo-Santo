@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Términos y Condiciones | Pozo Santo</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <meta name="description" content="Términos y condiciones de uso del sitio web de Tequila Pozo Santo. Información legal sobre compras, envíos y privacidad.">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --oro: #FFD700;
+            --oro-oscuro: #B8860B;
+            --negro: #0A0A0A;
+            --negro-profundo: #1A1A1A;
+            --blanco: #FFF8E7;
+            --gris: #E0E0E0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: var(--negro);
+            color: var(--blanco);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 20px 5%;
+            background: var(--negro);
+            border-bottom: 1px solid rgba(255,215,0,0.2);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 300;
+            letter-spacing: 4px;
+            color: var(--blanco);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--oro);
+            font-size: 36px;
+            font-weight: 600;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--blanco);
+            text-decoration: none;
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--oro);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--oro);
+        }
+
+        .nav-icons {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+            position: relative;
+        }
+
+        .nav-icons i {
+            color: var(--blanco);
+            font-size: 18px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .nav-icons i:hover {
+            color: var(--oro);
+            transform: scale(1.1);
+        }
+
+        .language-selector {
+            display: flex;
+            gap: 10px;
+            margin-left: 20px;
+        }
+
+        .language-selector span {
+            color: var(--blanco);
+            font-size: 14px;
+            cursor: pointer;
+            padding: 5px 10px;
+            transition: all 0.3s;
+            border: 1px solid transparent;
+        }
+
+        .language-selector span.active,
+        .language-selector span:hover {
+            color: var(--oro);
+            border-color: var(--oro);
+            border-radius: 20px;
+        }
+
+        /* Hero pequeño */
+        .page-hero {
+            height: 30vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-top: 80px;
+            background: linear-gradient(135deg, var(--negro-profundo) 0%, var(--negro) 100%);
+            border-bottom: 1px solid rgba(255,215,0,0.2);
+        }
+
+        .page-hero h1 {
+            font-size: 56px;
+            color: var(--blanco);
+        }
+
+        .page-hero h1 span {
+            color: var(--oro);
+        }
+
+        .page-hero p {
+            color: var(--gris);
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        /* Contenido legal */
+        .legal-content {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .legal-section {
+            background: linear-gradient(135deg, var(--negro-profundo) 0%, var(--negro) 100%);
+            border: 1px solid rgba(255,215,0,0.2);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            transition: all 0.3s;
+        }
+
+        .legal-section:hover {
+            border-color: var(--oro);
+            box-shadow: 0 10px 30px rgba(255,215,0,0.1);
+        }
+
+        .legal-section h2 {
+            font-size: 28px;
+            color: var(--oro);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .legal-section h2 i {
+            font-size: 24px;
+            opacity: 0.7;
+        }
+
+        .legal-section h3 {
+            font-size: 20px;
+            color: var(--blanco);
+            margin: 20px 0 10px;
+        }
+
+        .legal-section p {
+            color: #CCC;
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .legal-section ul, .legal-section ol {
+            color: #CCC;
+            margin: 15px 0 15px 20px;
+        }
+
+        .legal-section li {
+            margin-bottom: 10px;
+        }
+
+        .legal-section strong {
+            color: var(--oro);
+        }
+
+        .legal-section .highlight {
+            background: rgba(255,215,0,0.1);
+            border-left: 3px solid var(--oro);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .fecha-actualizacion {
+            text-align: right;
+            color: #999;
+            font-size: 14px;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,215,0,0.2);
+        }
+
+        .btn-volver {
+            display: inline-block;
+            margin: 40px 0;
+            padding: 12px 30px;
+            background: transparent;
+            border: 1px solid var(--oro);
+            color: var(--blanco);
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+
+        .btn-volver:hover {
+            background: var(--oro);
+            color: var(--negro);
+        }
+
+        .btn-volver i {
+            margin-right: 8px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--negro-profundo);
+            border-top: 1px solid rgba(255,215,0,0.2);
+            padding: 40px 5% 20px;
+            margin-top: 80px;
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 0 auto;
+            text-align: center;
+            color: #666;
+            font-size: 12px;
+        }
+
+        .footer-bottom a {
+            color: var(--oro);
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        /* Language EN */
+        .lang-en {
+            display: none;
+        }
+
+        body.en .lang-es {
+            display: none;
+        }
+
+        body.en .lang-en {
+            display: inline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .page-hero h1 {
+                font-size: 36px;
+            }
+            .legal-section {
+                padding: 25px;
+            }
+            .legal-section h2 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <nav>
+           <a href="index.html" class="logo">
+                <img src="images/LOGO_POZO_SANTO.png" alt="Pozo Santo" style="height: 100px; width: auto;">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">INICIO</a></li>
+                <li><a href="historia.html">HISTORIA</a></li>
+                <li><a href="proceso.html">PROCESO</a></li>
+                <li><a href="tienda.html">TIENDA</a></li>
+                <li><a href="contacto.html">CONTACTO</a></li>
+            </ul>
+            <div class="nav-icons">
+                <i class="fas fa-search"></i>
+                <i class="fas fa-user"></i>
+                <div style="position: relative;">
+                    <i class="fas fa-shopping-cart" id="cartIcon"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </div>
+                <div class="language-selector">
+                    <span class="active" onclick="changeLanguage('es')">ES</span>
+                    <span onclick="changeLanguage('en')">EN</span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="page-hero">
+        <div>
+            <h1><span>TÉRMINOS Y</span> CONDICIONES</h1>
+            <p class="lang-es">Por favor, lee cuidadosamente nuestros términos de uso</p>
+            <p class="lang-en">Please read carefully our terms of use</p>
+        </div>
+    </section>
+
+    <div class="legal-content">
+        <div class="legal-section">
+            <h2><i class="fas fa-gavel"></i> 1. ACEPTACIÓN DE LOS TÉRMINOS</h2>
+            <p class="lang-es">Al acceder y utilizar este sitio web, usted acepta estar sujeto a estos Términos y Condiciones, así como a todas las leyes y regulaciones aplicables. Si no está de acuerdo con alguna parte de estos términos, no podrá acceder ni utilizar nuestro sitio.</p>
+            <p class="lang-en">By accessing and using this website, you agree to be bound by these Terms and Conditions, as well as all applicable laws and regulations. If you do not agree with any part of these terms, you may not access or use our site.</p>
+        </div>
+
+        <div class="legal-section">
+            <h2><i class="fas fa-id-card"></i> 2. RESTRICCIONES DE EDAD</h2>
+            <div class="highlight">
+                <p class="lang-es"><strong>⚠️ IMPORTANTE:</strong> Este sitio web está destinado EXCLUSIVAMENTE para personas mayores de 18 años. La venta de bebidas alcohólicas está prohibida a menores de edad.</p>
+                <p class="lang-en"><strong>⚠️ IMPORTANT:</strong> This website is intended EXCLUSIVELY for persons over 18 years of age. The sale of alcoholic beverages is prohibited to minors.</p>
+            </div>
+            <p class="lang-es">Al realizar una compra en nuestro sitio, usted declara y garantiza bajo protesta de decir verdad que es mayor de edad según las leyes de su país de residencia. Nos reservamos el derecho de solicitar identificación oficial para verificar la edad antes de procesar cualquier pedido.</p>
+            <p class="lang-en">By making a purchase on our site, you declare and warrant under oath that you are of legal age according to the laws of your country of residence. We reserve the right to request official identification to verify age before processing any order.</p>
+        </div>
+
+        <div class="legal-section">
+            <h2><i class="fas fa-box"></i> 3. PRODUCTOS Y PRECIOS</h2>
+            <h3 class="lang-es">3.1 Descripción de productos</h3>
+            <h3 class="lang-en">3.1 Product description</h3>
+            <p class="lang-es">Todos nuestros productos son 100% tequila de agave azul, elaborados en Jalisco, México. Las imágenes mostradas son para fines ilustrativos y pueden variar ligeramente del producto final debido a mejoras en el empaque o presentación.</p>
+            <p class="lang-en">All our products are 100% blue agave tequila, produced in Jalisco, Mexico. The images shown are for illustrative purposes and may vary slightly from the final product due to packaging improvements.</p>
+            
+            <h3 class="lang-es">3.2 Precios</h3>
+            <h3 class="lang-en">3.2 Prices</h3>
+            <p class="lang-es">Los precios están expresados en pesos mexicanos (MXN) e incluyen el Impuesto al Valor Agregado (IVA). Nos reservamos el derecho de modificar precios en cualquier momento sin previo aviso, pero los cambios no afectarán pedidos ya confirmados.</p>
+            <p class="lang-en">Prices are expressed in Mexican pesos (MXN) and include Value Added Tax (VAT). We reserve the right to modify prices at any time without prior notice, but changes will not affect already confirmed orders.</p>
+        </div>
+
+        <div class="legal-section">
+            <h2><i class="fas fa-credit-card"></i> 4. PAGOS</h2>
+            <p class="lang-es">Aceptamos los siguientes métodos de pago:</p>
+            <p class="lang-en">We accept the following payment methods:</p>
+            <ul>
+                <li><i class="fas fa-check" style="color: var(--oro); margin-right: 8px;"></i> Tarjetas de crédito y débito (Visa, MasterCard, American Express)</li>
+                <li><i class="fas fa-check" style="color: var(--oro); margin-right: 8px;"></i> PayPal</li>
+                <li><i class="fas fa-check" style="color: var(--oro); margin-right: 8px;"></i> Transferencia bancaria</li>
+                <li><i class="fas fa-check" style="color: var(--oro); margin-right: 8px;"></i> Depósito en efectivo (solo en México)</li>
+            </ul>
+            <p class="lang-es">Todos los pagos con tarjeta son procesados a través de pasarelas seguras con certificación PCI DSS. No almacenamos información de tarjetas de crédito en nuestros servidores.</p>
+            <p class="lang-en">All card payments are processed through secure gateways with PCI DSS certification. We do not store credit card information on our servers.</p>
+        </div>
+
+        <div class="legal-section">
+            <h2><i class="fas fa-truck"></i> 5. ENVÍOS Y ENTREGAS</h2>
+            <h3 class="lang-es">5.1 Cobertura</h3>
+            <h3 class="lang-en">5.1 Coverage</h3>
+            <p class="lang-es">Realizamos envíos a todo México a través de paquetería certificada. Por el momento no realizamos envíos internacionales.</p>
+            <p class="lang-en">We ship throughout Mexico through certified carriers. We do not currently ship internationally.</p>
+            
+            <h3 class="lang-es">5.2 Tiempos de entrega</h3>
+            <h3 class="lang-en">5.2 Delivery times</h3>
+            <p class="lang-es">Los tiempos de entrega aproximados son:</p>
+            <p class="lang-en">Approximate delivery times are:</p>
+            <ul>
+                <li><strong>Zona Metropolitana:</strong> 2-3 días hábiles</li>
+                <li><strong>Centro del país:</strong> 3-5 días hábiles</li>
+                <li><strong>Norte y Sur:</strong> 5-7 días hábiles</li>
+                <li><strong>Península de Yucatán:</strong> 7-10 días hábiles</li>
+            </ul>
+            
+            <h3 class="lang-es">5.3 Verificación al recibir</h3>
+            <h3 class="lang-en">5.3 Verification upon receipt</h3>
+            <p class="lang-es">Al recibir su pedido, deberá presentar una identificación oficial que acredite su mayoría de edad. El paquete no será entregado a menores de edad bajo ninguna circunstancia.</p>
+            <p class="lang-en">Upon receiving your order, you must present an official ID proving you are of legal age. The package will not be delivered to minors under any circumstances.</p>
+        </div>
+
+        <div class="legal-section">
+            <h2><i class="fas fa-undo-alt"></i> 6. DEVOLUCIONES Y REEMBOLSOS</h2>
+            <h3 class="lang-es">6.1 Devoluciones</h3>
+            <h3 class="lang-en">6.1 Returns</h3>
+            <p class="lang-es">Aceptamos devoluciones dentro de los 7 días naturales posteriores a la recepción del pedido, siempre que el producto esté en su empaque original sin abrir y en perfectas condiciones.</p>
+            <p class="lang-en">We accept returns within 7 calendar days after receiving the order, provided the product is in its original unopened packaging and in perfect condition.</p>
+            
+            <h3 class="lang-es">6.2 Productos dañados</h3>
+            <h3 class="lang-en">6.2 Damaged products</h3>
+            <p class="lang-es">Si su pedido llega dañado, debe reportarlo dentro de las 48 horas posteriores a la entrega enviando fotos del daño a nuestro correo de servicio al cliente para gestionar un reemplazo o reembolso.</p>
+            <p class="lang-en">If your order arrives damaged, you must report it within 48 hours of delivery by sending photos of the damage to our customer service email to arrange a replacement or refund.</p>
+            
+            <h3 class="lang-es">6.3 Reembolsos</h3>
+            <h3 class="lang-en">6.3 Refunds</h3>
+            <p class="lang-es">Los reembolsos se procesarán con el mismo método de pago utilizado en la compra dentro de los 10-15 días hábiles posteriores a la aprobación de la devolución.</p>
+            <p class="lang-en">Refunds will be processed using the same payment method used for the purchase within 10-15 business days after return approval.</p>
+        </div>
+
+        <div class="legal-section">
+            <h2><i class="fas fa-copyright"></i> 7. PROPIEDAD INTELECTUAL</h2>
+            <p class="lang-es">Todos los contenidos de este sitio web, incluyendo pero no limitado a logos, imágenes, textos, gráficos, videos y diseños, son propiedad exclusiva de Pozo Santo y están protegidos por las leyes de propiedad intelectual. Queda prohibida la reproducción total o parcial sin autorización expresa.</p>
+            <p class="lang-en">All content on this website, including but not limited to logos, images, texts, graphics, videos, and designs, are the exclusive property of Pozo Santo and are protected by intellectual property laws. Total or partial reproduction without express authorization is prohibited.</p>
+        </div>
+
+        <div class="legal-section">
+            <h2><i class="fas fa-shield-alt"></i> 8. LIMITACIÓN DE RESPONSABILIDAD</h2>
+            <p class="lang-es">Pozo Santo no será responsable por daños directos, indirectos, incidentales o consecuentes derivados del uso o la imposibilidad de uso de nuestros productos o sitio web, incluyendo daños por pérdida de datos o lucro cesante.</p>
+            <p class="lang-en">Pozo Santo shall not be liable for direct, indirect, incidental, or consequential damages arising from the use or inability to use our products or website, including damages for loss of data or lost profits.</p>
+        </div>
+
+        <div class="legal-section">
+            <h2><i class="fas fa-gavel"></i> 9. LEGISLACIÓN APLICABLE</h2>
+            <p class="lang-es">Estos Términos y Condiciones se rigen por las leyes de los Estados Unidos Mexicanos. Cualquier disputa relacionada con el uso de este sitio web será resuelta en los tribunales competentes de la ciudad de Guadalajara, Jalisco.</p>
+            <p class="lang-en">These Terms and Conditions are governed by the laws of the United Mexican States. Any dispute related to the use of this website will be resolved in the competent courts of the city of Guadalajara, Jalisco.</p>
+        </div>
+
+        <div class="legal-section">
+            <h2><i class="fas fa-clock"></i> 10. MODIFICACIONES</h2>
+            <p class="lang-es">Nos reservamos el derecho de modificar estos términos en cualquier momento. Los cambios entrarán en vigor inmediatamente después de su publicación en el sitio web. Es responsabilidad del usuario revisar periódicamente esta página para estar al tanto de las actualizaciones.</p>
+            <p class="lang-en">We reserve the right to modify these terms at any time. Changes will take effect immediately after posting on the website. It is the user's responsibility to periodically review this page to stay informed of updates.</p>
+        </div>
+
+        <div class="legal-section">
+            <h2><i class="fas fa-envelope"></i> 11. CONTACTO</h2>
+            <p class="lang-es">Si tienes preguntas sobre estos Términos y Condiciones, puedes contactarnos a través de:</p>
+            <p class="lang-en">If you have questions about these Terms and Conditions, you can contact us through:</p>
+            <ul style="list-style: none; padding-left: 0;">
+                <li><i class="fas fa-envelope" style="color: var(--oro); width: 25px;"></i> legal@pozosanto.mx</li>
+                <li><i class="fas fa-phone" style="color: var(--oro); width: 25px;"></i> +52 33 1234 5678</li>
+                <li><i class="fas fa-map-marker-alt" style="color: var(--oro); width: 25px;"></i> Carretera a Tequila Km 15, Jalisco, México</li>
+            </ul>
+        </div>
+
+        <div class="fecha-actualizacion">
+            <i class="fas fa-calendar-alt" style="margin-right: 8px; color: var(--oro);"></i>
+            <span class="lang-es">Última actualización: 11 de marzo de 2026</span>
+            <span class="lang-en">Last updated: March 11, 2026</span>
+        </div>
+
+        <div style="text-align: center;">
+            <a href="index.html" class="btn-volver">
+                <i class="fas fa-arrow-left"></i>
+                <span class="lang-es">VOLVER AL INICIO</span>
+                <span class="lang-en">BACK TO HOME</span>
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Pozo Santo. <span class="lang-es">Todos los derechos reservados.</span><span class="lang-en">All rights reserved.</span> | 
+            <a href="aviso-privacidad.html" class="lang-es">Aviso de Privacidad</a><a href="aviso-privacidad.html" class="lang-en">Privacy Policy</a> | 
+            <a href="terminos.html" class="lang-es">Términos</a><a href="terminos.html" class="lang-en">Terms</a> | 
+            <a href="politica-envios.html" class="lang-es">Envíos</a><a href="politica-envios.html" class="lang-en">Shipping</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Header scroll effect (opcional ya que es fijo)
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.style.background = 'var(--negro)';
+            } else {
+                header.style.background = 'var(--negro)';
+            }
+        });
+
+        // Language switcher
+        function changeLanguage(lang) {
+            document.body.classList.remove('en', 'es');
+            document.body.classList.add(lang);
+            
+            document.querySelectorAll('.language-selector span').forEach(el => {
+                el.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        // Load preferred language
+        const savedLang = localStorage.getItem('preferredLanguage') || 'es';
+        document.body.classList.add(savedLang);
+        document.querySelectorAll('.language-selector span').forEach(el => {
+            if (el.textContent.toLowerCase() === savedLang) {
+                el.classList.add('active');
+            }
+        });
+
+        // Cart count from localStorage
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        document.getElementById('cartCount').textContent = cart.reduce((total, item) => total + (item.quantity || 1), 0);
+    </script>
+</body>
+</html>
